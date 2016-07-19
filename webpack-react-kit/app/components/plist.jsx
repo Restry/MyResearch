@@ -48,8 +48,9 @@ export default class Plist extends React.Component {
               return (
                 <div className="card">
                   <img src={people.avatar_url} style={imgStyle}/>
+                  <hr/>
                   <p className="card-text">
-                    <a href={people.html_url} target="_blank">{people.login}</a>
+                    <a href={people.html_url} target="_blank">{people.login}</a> 
                   </p>
                 </div>
               )

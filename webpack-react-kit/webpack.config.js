@@ -56,7 +56,14 @@ module.exports= {
     ]
   },
   plugins: [
-
+    new webpack.optimize.UglifyJsPlugin({	//压缩代码
+          compress: {
+              warnings: false
+          }, 
+          sourceMap: false,
+          mangle: false,
+          except: ['$super', '$', 'exports', 'require']	//排除关键字
+      }),
     new HtmlwebpackPlugin({
       title: 'My react app',
       filename: '/index.html',    //生成的html存放路径，相对于 path
