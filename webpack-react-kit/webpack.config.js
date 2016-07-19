@@ -9,8 +9,9 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
 module.exports= {
   entry: {
-    app: path.resolve(APP_PATH, 'index.jsx'),
-    vendors: ['react']
+    //app: path.resolve(APP_PATH, 'index.jsx'),
+    dashborad:path.resolve(APP_PATH,'dashboard.jsx'),
+    vendors: ['react','jquery','bootstrap']
   },
   output: {
     path: BUILD_PATH,
@@ -56,24 +57,29 @@ module.exports= {
     ]
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({	//压缩代码
-          compress: {
-              warnings: false
-          }, 
-          sourceMap: false,
-          mangle: false,
-          except: ['$super', '$', 'exports', 'require']	//排除关键字
-      }),
+    new webpack.ProvidePlugin({	//加载jq 
+            $: 'jquery',
+            jQuery:"jquery"
+    }),
+    // new webpack.optimize.UglifyJsPlugin({	//压缩代码
+    //       compress: {
+    //           warnings: false
+    //       }, 
+    //       sourceMap: false,
+    //       mangle: false,
+    //       except: ['$super', '$', 'exports', 'require']	//排除关键字
+    //   }),
     new HtmlwebpackPlugin({
-      title: 'My react app',
+      title: 'Global services platform',
       filename: '/index.html',    //生成的html存放路径，相对于 path
-      template: './app/views/index.html',    //html模板路径
+      template: './app/views/_layouts.html',    //html模板路径
       inject: true,    //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
       hash: true,    //为静态资源生成hash值
-      chunks: ['app', 'vendors'],
+      chunks: ['dashborad', 'vendors'],
     }),
 
     new ExtractTextPlugin("css/[name].css"),    //单独使用style标签加载css并设置其路径
+   // new ExtractTextPlugin("img/[name].css"),    //单独使用style标签加载css并设置其路径
 
 		new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.js')
   ]
