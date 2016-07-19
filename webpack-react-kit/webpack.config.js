@@ -10,8 +10,8 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 module.exports= {
   entry: {
     //app: path.resolve(APP_PATH, 'index.jsx'),
-    dashborad:path.resolve(APP_PATH,'dashboard.jsx'),
-    vendors: ['react','jquery','bootstrap']
+    dashborad:path.resolve(APP_PATH,'dashboard.js'),
+    vendors: ['jquery','bootstrap']
   },
   output: {
     path: BUILD_PATH,
@@ -20,7 +20,7 @@ module.exports= {
     chunkFilename: "[chunkhash:8].chunk.js"
   },
   //enable dev source map
-  //devtool: 'eval-source-map',
+  devtool: 'eval-source-map',
   //enable dev server
   devServer: {
     historyApiFallback: true,
@@ -34,11 +34,11 @@ module.exports= {
   },
   module: {
     loaders: [
-      {
-        test: /\.jsx?$/,
-        loaders: ['babel'],
-        include: APP_PATH
-      },
+      // {
+      //   test: /\.jsx?$/,
+      //   loaders: ['babel'],
+      //   include: APP_PATH
+      // },
       {
         test: /\.scss$/, 
         loader: ExtractTextPlugin.extract("style-loader", "css-loader", 'sass-loader') 
@@ -59,7 +59,8 @@ module.exports= {
   plugins: [
     new webpack.ProvidePlugin({	//加载jq 
             $: 'jquery',
-            jQuery:"jquery"
+            jQuery:"jquery",
+            Raphael:"raphael"
     }),
     // new webpack.optimize.UglifyJsPlugin({	//压缩代码
     //       compress: {

@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'gsp-demo-icons';
-    src:    url('fonts/gsp-demo-icons.eot?bbef6n');
-    src:    url('fonts/gsp-demo-icons.svg?bbef6n#gsp-demo-icons') format('svg'),
-        url('fonts/gsp-demo-icons.eot?bbef6n#iefix') format('embedded-opentype'),
-        url('fonts/gsp-demo-icons.ttf?bbef6n') format('truetype'),
-        url('fonts/gsp-demo-icons.woff?bbef6n') format('woff');
+    src:    url('fonts/gsp-demo-icons.eot');
+    src:    url('fonts/gsp-demo-icons.svg#gsp-demo-icons') format('svg'),
+        url('fonts/gsp-demo-icons.eot#iefix') format('embedded-opentype'),
+        url('fonts/gsp-demo-icons.ttf') format('truetype'),
+        url('fonts/gsp-demo-icons.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
