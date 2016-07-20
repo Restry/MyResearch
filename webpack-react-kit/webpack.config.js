@@ -11,23 +11,24 @@ module.exports= {
   entry: {
     //app: path.resolve(APP_PATH, 'index.jsx'),
     dashborad:path.resolve(APP_PATH,'dashboard.js'),
-    vendors: ['jquery','bootstrap3']
+    boostrap3:['bootstrap3'],
+    jquery:['jquery']
   },
   output: {
     path: BUILD_PATH,
-    filename: '[name].bundle.js',
+    filename: '[chunkhash:8].[name].js',
     publicPath: '/',
     chunkFilename: "[chunkhash:8].chunk.js"
   },
   //enable dev source map
   devtool: 'eval-source-map',
   //enable dev server
-  devServer: {
-    historyApiFallback: true,
-    hot: true,
-    inline: true,
-    progress: true
-  },
+  // devServer: {
+  //   historyApiFallback: true,
+  //   hot: true,
+  //   inline: true,
+  //   progress: true
+  // },
   resolve: {
      // root: ['app'],
       extensions: ['', '.js', '.jsx']
@@ -76,12 +77,18 @@ module.exports= {
       template: './app/views/_layouts.html',    //html模板路径
       inject: true,    //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
       hash: true,    //为静态资源生成hash值
-      chunks: ['dashborad', 'vendors'],
+      chunks: ['jquery','bootstrap3', 'dashborad'],
     }),
 
-    new ExtractTextPlugin("css/[name].css"),    //单独使用style标签加载css并设置其路径
+    new ExtractTextPlugin("css/[name].css", {
+      publicPath: '/css/',
+      allChunks: true
+    }),    //单独使用style标签加载css并设置其路径
    // new ExtractTextPlugin("img/[name].css"),    //单独使用style标签加载css并设置其路径
 
-		new webpack.optimize.CommonsChunkPlugin('vendors', 'js/vendors.js')
+		new webpack.optimize.CommonsChunkPlugin({
+        name:['bootstrap3','jquery'],
+        filename:"js/[chunkhash:8].[name].js" , minChunks:Infinity
+    })
   ]
 }
