@@ -1,10 +1,47 @@
 
-// Dashboard.js
-// ====================================================================
-// This file should not be included in your project.
-// This is just a sample how to initialize plugins or components.
-//
-// - Back of China -
+
+function getId(id) {
+    return document.getElementById(id);
+}
+
+
+var header = require("../common/header.js");
+var center = require("../common/center.js");
+var footer = require("../common/footer.js");
+var demoSet = require("../common/demoset.js");
+
+require("bootstrap3");
+
+getId("navbar").innerHTML = header;
+console.log("loaded:" + header.length);
+getId("center").innerHTML = center;
+console.log("loaded:" + center.length);
+getId("footer").innerHTML = footer;
+console.log("loaded:" + footer.length);
+getId("gsp-set").innerHTML = demoSet;
+console.log("loaded:" + demoSet.length);
+
+
+require("pace")
+
+require("../../js/lib/gsp.js")
+require("../../js/pages/gsp-demo.js")
+
+require("morris.js")
+
+require("jquery-sparkline")
+ 
+
+
+ 
+
+
+
+
+
+
+
+
 
 
 $(window).on('load', function() {
