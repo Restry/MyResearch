@@ -11,7 +11,7 @@ module.exports= {
   entry: {
     //app: path.resolve(APP_PATH, 'index.jsx'),
     dashborad:path.resolve(APP_PATH,'dashboard.js'),
-    vendors: ['jquery','bootstrap']
+    vendors: ['jquery','bootstrap3']
   },
   output: {
     path: BUILD_PATH,

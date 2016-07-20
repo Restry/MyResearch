@@ -1,6 +1,7 @@
 
 require("./css/bootstrap.min.css")
 require("./css/gsp.min.css")
+require("./css/demo/gsp-demo.css")
 require("./css/demo/gsp-demo-icons.css")
 require("./plugins/morris-js/morris.min.css")
 require("./plugins/magic-check/css/magic-check.min.css")
@@ -11,7 +12,7 @@ var center = require("./views/tpl/center.html");
 var footer = require("./views/tpl/footer.html");
 var demoSet = require("./views/tpl/demo-set.html");
 
-require("bootstrap");
+require("bootstrap3");
 
 getId("navbar").innerHTML=header;
 console.log("loaded:"+header.length);
@@ -26,14 +27,15 @@ function getId(id){
     return document.getElementById(id);
 }
 
-require( "./plugins/pace/pace.min.js")
+require( "pace")
 
 require("./js/gsp.js")
 require("./js/demo/gsp-demo.js")
 
-require("./plugins/morris-js/morris.js")
+require("morris.js")
 //require("./plugins/morris-js/raphael-js/raphael.min.js")
 
-require("./plugins/sparkline/jquery.sparkline.js")
+require("jquery-sparkline")
 
 require( "./js/demo/dashboard.js");
+//require("imports?jQuery=jquery!jquery.resizeend")
