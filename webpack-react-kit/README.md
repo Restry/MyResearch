@@ -1,11 +1,11 @@
 # webpack-react-kit
-another simple webpack react starter kit to help you get to know webpack better
+another simple webpack react starter kit to help you get to know webpack better , with bootstrap ntify theme . 
 
 ### Features
 
 * Hot Module Replacement for React Component
 * Babel for js/jsx processing
-* Bootstrap4 framework with SCSS support
+* Bootstrap3 framework with SCSS support
 * Testing with Karma
 
 ### Demo

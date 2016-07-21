@@ -29,19 +29,9 @@ require("../../js/pages/gsp-demo.js")
 
 require("morris.js")
 
-require("jquery-sparkline")
  
 
-
  
-
-
-
-
-
-
-
-
 
 
 $(window).on('load', function() {
@@ -220,14 +210,28 @@ $(window).on('load', function() {
     }
 
 
-    $(window).on('resizeEnd', function(){
-        hddSparkline();
-        earningSparkline();
-        salesSparkline();
-    })
-    hddSparkline();
-    earningSparkline();
-    salesSparkline();
+    require.ensure(["jquery","$"], function () {//这里是异步的
+                console.log("进入require.ensure回调")
+             
+                require("jquery-sparkline")
+
+                hddSparkline();
+                earningSparkline();
+                salesSparkline();
+
+
+                $(window).on('resizeEnd', function(){
+                    hddSparkline();
+                    earningSparkline();
+                    salesSparkline();
+                })
+
+                console.log("调用完require.ensure")
+    })
+
+
+
+
 
 
 
@@ -251,12 +255,7 @@ $(window).on('load', function() {
         },2000);
     });
 
-
-
-
-
-
-
+ 
 
     // WELCOME NOTIFICATIONS
     // =================================================================

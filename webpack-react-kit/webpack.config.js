@@ -7,6 +7,8 @@ var ROOT_PATH = path.resolve(__dirname);
 var SRC_PATH = path.resolve(ROOT_PATH, 'src');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
+var debug = process.env.ENVDEBUG;
+
 module.exports = {
   entry: {
     //app: path.resolve(SRC_PATH, 'index.jsx'),
@@ -18,10 +20,10 @@ module.exports = {
     path: BUILD_PATH,
     filename: '[chunkhash:8].[name].js',
     publicPath: '/',
-    chunkFilename: "[chunkhash:8].chunk.js"
+    chunkFilename: "js/[chunkhash:8].chunk.js"
   },
   //enable dev source map
-  devtool: 'eval-source-map',
+  devtool: '#source-map',
   //enable dev server
   // devServer: {
   //   historyApiFallback: true,
@@ -30,7 +32,7 @@ module.exports = {
   //   progress: true
   // },
   resolve: {
-   // root: [path.resolve('./src/js')],
+    // root: [path.resolve('./src/js')],
     extensions: ['', '.js', '.jsx']
   },
   module: {
@@ -65,14 +67,14 @@ module.exports = {
       jQuery: "jquery",
       Raphael: "raphael"
     }),
-    // new webpack.optimize.UglifyJsPlugin({	//压缩代码
-    //       compress: {
-    //           warnings: false
-    //       }, 
-    //       sourceMap: false,
-    //       mangle: false,
-    //       except: ['$super', '$', 'exports', 'require']	//排除关键字
-    //   }),
+    debug ? function() {} : new webpack.optimize.UglifyJsPlugin({ //压缩代码
+      compress: {
+        warnings: false
+      },
+      sourceMap: true,
+      mangle: true,
+      except: ['$super', '$', 'exports', 'require'] //排除关键字
+    }),
     new HtmlwebpackPlugin({
       title: 'Global services platform',
       filename: '/index.html', //生成的html存放路径，相对于 path

@@ -4,7 +4,7 @@
   "description": "a simple webpack react starter kit",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --progress --profile --colors",
+    "build": "set ENVDEBUG = false & webpack --progress --profile --colors",
     "dev": "webpack-dev-server --progress --profile --colors -color",
     "test": "karma start"
   },
