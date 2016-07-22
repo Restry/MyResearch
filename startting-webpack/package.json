@@ -1,0 +1,16 @@
+{
+  "name": "startting-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --progress --profile --colors",
+    "dev": "webpack-dev-server --inline --content-base dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "{}"
+  },
+  "author": "restry",
+  "license": "ISC"
+}

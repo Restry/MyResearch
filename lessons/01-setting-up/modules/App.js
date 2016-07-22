@@ -1,4 +1,5 @@
-import React from 'react'
+
+var React = require('react/addons');
 
 export default React.createClass({
   render() {

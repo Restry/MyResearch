@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Emulating onhashchange</title>
+		<!-- script type="text/javascript" src="http://getfirebug.com/releases/lite/1.2/firebug-lite-compressed.js"></script-->
+		<script type="text/javascript" src="jquery-1.2.6.js"></script>
+		<script type="text/javascript">
+		function addHistoryEntry(newHash)
+		{
+			/*
+			 *	In Safari, changing the src/hash inside of an iframe doesn't
+			 * 	create a new history entry.  This will need to work to use
+			 *	this approach.
+			 *	
+			 *	See: https://bugs.webkit.org/show_bug.cgi?id=9166  
+			 */
+			var iframe = jQuery('#myIframe').contents();
+			if(jQuery('a:contains('+newHash+')').length === 0) {
+				jQuery('body', iframe).append('<div></div><a name="' + newHash + '"></a>');
+			}
+
+			function changeHash(newHash)
+			{
+				jQuery('#myIframe').get(0).contentWindow.document.location.hash = '#' + newHash;
+			}
+
+			if(jQuery.browser.opera) { // Opera wasn't recognizing new <div> and <a> without a timeout.
+				window.setTimeout(function()
+				{
+					changeHash(newHash);
+				}, 100);
+			} else {
+				changeHash(newHash);
+			}
+		}
+		</script>
+		<style type="text/css">
+		#myIframe {
+			/* Scroll Event doesn't fire if the iframe is hidden with display: none;
+			 */
+			/*position: absolute;
+			left: -500px;
+			top: -500px;*/
+		}
+		</style>
+	</head>
+	<body>
+		<div>This iframe would be hidden.  Don't scroll here.</div>
+		<iframe id="myIframe" name="myIframe" src="iframe.html"></iframe>
+		<!-- <iframe id="myHistoryIframe" src="empty.html"></iframe> -->
+		<div>
+			<button onclick="addHistoryEntry('myLink');">Update iframe Hash to 'myLink'</button>
+		</div>
+		<div>
+			<button onclick="addHistoryEntry('myOtherLink');">Update iframe Hash to 'myOtherLink'</button>
+		</div>
+		<div>
+			<button onclick="addHistoryEntry('myOtherOtherLink');">Update iframe Hash to 'myOtherOtherLink'</button>
+		</div>
+		<button onclick="alert(jQuery('#myIframe').attr('src'))">Current Hash</button>
+		<div>Test I-frame for intermediate browsing.</div>
+		<iframe style="width: 500px; height: 500px" src="http://192.168.5.1:8000/"></iframe>
+	</body>
+</html>

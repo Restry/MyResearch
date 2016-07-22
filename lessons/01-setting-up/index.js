@@ -1,4 +1,5 @@
-import React from 'react'
+
+var React = require('react/addons');
 import { render } from 'react-dom'
 import App from './modules/App'
 render(<App/>, document.getElementById('app'))
