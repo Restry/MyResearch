@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Holder I-Frame Source</title>
+		<style type="text/css">
+		body { padding: 0; margin: 0; }
+		a { display: block; background-color: pink; height: 150px; }
+		div { height: 150px; }
+		</style>
+		<script type="text/javascript" src="jquery-1.2.6.js"></script>
+		<script type="text/javascript" src="jquery.dimensions.js"></script>
+		<script type="text/javascript">
+			jQuery(function()
+			{
+				//$('body').scroll(function()
+				var scrollObject = $.browser.msie && $.browser.version >= 7 ? 'body' : window;
+				$(scrollObject).scroll(function()
+				{
+					var divNumber = Math.floor($(window).scrollTop()-150)/300;
+					var hash = jQuery('a:eq(' + divNumber + ')').attr('name') || '';
+					alert('hashChanged to #' + hash);
+				});
+			});
+		</script>
+	</head>
+	<body></body>
+</html>
