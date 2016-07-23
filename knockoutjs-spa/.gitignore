@@ -1,0 +1,4 @@
+SPA/*.bat
+SPA/AngularFrontEnd.sln
+npm-debug.log
+node_modules
