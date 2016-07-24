@@ -17,7 +17,7 @@ module.exports = {
   output: {
     path: BUILD_PATH,
     filename: 'js/[name].js',
-    publicPath: '/dist/',
+    publicPath: '',
     chunkFilename: "js/[chunkhash:8].chunk.js"
   },
   //enable dev server
@@ -27,8 +27,8 @@ module.exports = {
   resolve: {
     // root: [path.resolve('./src/js')],
     extensions: ['', '.js', '.min.js'],
-    alias:{
-      "localjquery":path.resolve(SRC_PATH,'js/lib/jquery.min.js')
+    alias: {
+      "localjquery": path.resolve(SRC_PATH, 'js/lib/jquery.min.js')
     }
   },
 
@@ -50,7 +50,7 @@ module.exports = {
         loader: "html?-minimize"
       }, {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loader: 'file?name=images/img-[sha512:hash:base64:7].[ext]'
+        loader: 'file?name=/images/img-[sha512:hash:base64:7].[ext]'
       }, {
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader?name=fonts/[name].[ext]'
@@ -62,7 +62,8 @@ module.exports = {
     new webpack.ProvidePlugin({ //加载jq 
       $: 'localjquery',
       "jquery": "localjquery",
-      jQuery: "localjquery"
+      jQuery: "localjquery",
+      ko: "knockout"
     }),
     debug ? function() {} : new webpack.optimize.UglifyJsPlugin({ //压缩代码
       compress: {

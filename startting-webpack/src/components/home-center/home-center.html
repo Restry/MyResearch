@@ -1,4 +1,3 @@
-
 <div class="row text-center sops-middle">
 
     <div class="col-xs-4">
@@ -13,7 +12,7 @@
 
         </div>
     </div>
- 
+
     <div class="col-xs-4">
 
         <a href="/Question">
@@ -26,7 +25,7 @@
 
         </div>
     </div>
- 
+
     <div class="col-xs-4">
 
         <a href="/Experience">
@@ -39,7 +38,33 @@
 
         </div>
     </div>
- 
+
 </div>
 
 <div class="clear"></div>
+
+<div class="row">
+    <div id="component-inline">
+
+        <ul data-bind="foreach: products1">
+            <li class="product">
+                <strong data-bind="text: name"></strong>
+                <like-widget params="value: userRating"></like-widget>
+            </li>
+        </ul>
+
+    </div>
+</div>
+
+<hr/>
+<div class="row">
+    <div id="component-amd">
+        <ul data-bind="foreach: products2">
+            <li class="product">
+                <strong data-bind="text: name"></strong>
+                <like-or-dislike params="value: userRating"></like-or-dislike>
+            </li>
+        </ul>
+        <button data-bind="click: addProduct">Add a product</button>
+    </div>
+</div>

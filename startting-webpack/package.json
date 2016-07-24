@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --progress --profile --colors",
+    "build": "webpack --progress --profile --colors & http-server dist -a 0.0.0.0 -p 8000 -c-1",
     "dev": "webpack-dev-server --inline --content-base dist"
   },
   "repository": {
