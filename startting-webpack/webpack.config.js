@@ -12,13 +12,14 @@ var debug = true;
 module.exports = {
   entry: {
     index: path.resolve(SRC_PATH, 'js/index.js'),
+    knowledge: path.resolve(SRC_PATH, 'js/knowledge.js'),
     jquery: ['localjquery']
   },
   output: {
     path: BUILD_PATH,
     filename: 'js/[name].js',
     publicPath: '',
-    chunkFilename: "js/[chunkhash:8].chunk.js"
+    chunkFilename: "js/[chunkhash:8].[name].js"
   },
   //enable dev server
   devServer: {
@@ -74,12 +75,20 @@ module.exports = {
       except: ['$super', '$', 'exports', 'require'] //排除关键字
     }),
     new HtmlwebpackPlugin({
-      title: 'Global services platform',
+      title: 'sops',
       filename: '/index.html', //生成的html存放路径，相对于 path
       template: './src/views/_layouts.html', //html模板路径
       inject: true, //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
       hash: true, //为静态资源生成hash值
       chunks: ['jquery', 'index'],
+    }),
+    new HtmlwebpackPlugin({
+      title: 'sops',
+      filename: '/knowledge.html', //生成的html存放路径，相对于 path
+      template: './src/views/knowledge.html', //html模板路径
+      inject: true, //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
+      hash: true, //为静态资源生成hash值
+      chunks: ['jquery', 'knowledge'],
     }),
 
     new ExtractTextPlugin("css/[name].css", {
