@@ -1,9 +1,20 @@
-﻿require.ensure(["./jquery.fancytree.js", "./ui.fancytree.css"], function() {
+require.ensure(["./jquery.fancytree.js", "./ui.fancytree.css"], function() {
 
 
     //注册Fancytree的自定义属性（nodeType,tenantID)
     
     require("./jquery.fancytree.js");
+
+
+
+
+
+
+
+
+
+
+
 
     (function($, undefined) {
         // Consider to use [strict mode](http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/)
@@ -97,8 +108,7 @@
                 parent.document.getElementById("content").src = node.data.href + "&tenantId=" + node.data.tenantID;
             }
         },
-        extensions: ["nodeType"],
-        extensions: ["tenantID"],
+        extensions: ["nodeType","tenantID"], 
         lazyLoad: function(event, data) {
             // var node = data.node;                  // Issue an ajax request to load child nodes
 
