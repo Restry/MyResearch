@@ -25,6 +25,7 @@ module.exports = {
   devServer: {
     host: "0.0.0.0"
   },
+  devtool: 'eval-source-map', 
   resolve: {
     // root: [path.resolve('./src/js')],
     extensions: ['', '.js', '.min.js'],
