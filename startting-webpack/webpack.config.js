@@ -56,6 +56,10 @@ module.exports = {
       }, {
         test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader?name=fonts/[name].[ext]'
+      },
+      { 
+        test: /\.hbs$/, 
+        loader: "handlebars-loader" 
       }
 
     ]
@@ -78,7 +82,7 @@ module.exports = {
     new HtmlwebpackPlugin({
       title: 'sops',
       filename: '/index.html', //生成的html存放路径，相对于 path
-      template: './src/views/_layouts.html', //html模板路径
+      template: './src/views/home.hbs', //html模板路径
       inject: true, //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
       hash: true, //为静态资源生成hash值
       chunks: ['jquery', 'index'],
@@ -86,7 +90,7 @@ module.exports = {
     new HtmlwebpackPlugin({
       title: 'sops',
       filename: '/knowledge.html', //生成的html存放路径，相对于 path
-      template: './src/views/knowledge.html', //html模板路径
+      template: './src/views/knowledge.hbs', //html模板路径
       inject: true, //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
       hash: true, //为静态资源生成hash值
       chunks: ['jquery', 'knowledge'],

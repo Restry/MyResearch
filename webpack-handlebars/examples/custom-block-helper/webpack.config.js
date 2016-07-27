@@ -8,5 +8,11 @@ module.exports = {
   },
 	module: {
 		loaders: [{ test: /\.handlebars$/, loader: __dirname + "/../../?helperDirs[]=" + __dirname + "/helpers" }]
-	}
+	},
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Custom template using Handlebars',
+      template: '_layouts.hbs'
+    })
+  ]
 };
