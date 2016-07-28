@@ -1,0 +1,20 @@
+{{#> _layouts}}
+
+ 
+    <div class="knowledge">
+
+        <div class="banner">
+            {{page}}
+        </div>
+        <div class="clear"></div>
+
+        <div data-bind="component: {
+            name:'serach',
+            params: { settings: settings }
+        }"></div>
+
+    </div>
+  
+{{/_layouts}}
+
+

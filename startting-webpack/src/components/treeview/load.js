@@ -4,7 +4,7 @@ var html = require("./tpl.html");
 
 function viewModel(params) {
    
-  //  require.ensure(["./jquery.ztree.core.js", "./ztreestyle/ztreestyle.css"], function() {
+    require.ensure([], function() {
         
         require("./ztreestyle/ztreestyle.css");
         require("./jquery.ztree.core.js");
@@ -14,7 +14,9 @@ function viewModel(params) {
             $.fn.zTree.init($("#treeDemo"), params.settings);
        
         })
-   // });
+    });
+
+    this.node=params.node;
 }
 
 

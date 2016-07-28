@@ -21,17 +21,17 @@ require.ensure(["knockout"], function() {
     function MyViewModel1() {
         this.topNav =  {
             links: {
-                knowledge: "#knowledge",
-                question: "#question",
-                experience: "#experience"
+                knowledge: "knowledge.html",
+                question: "question.html",
+                experience: "experience.html"
             }
         }
             
         this.homeCenter = {
             links: {
-                knowledge: "#knowledge",
-                question: "#question",
-                experience: "#experience"
+                knowledge: "knowledge.html",
+                question: "question.html",
+                experience: "experience.html"
             }
         };
 
