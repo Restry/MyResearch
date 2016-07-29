@@ -10,7 +10,33 @@
 
 <div class="right col-xs-9"> 
     <div data-bind="text: node"></div>
-    <iframe id="content" src="" frameborder="0"></iframe>
+    
+    <div> 
+        <div class="ui-box">
+            <div>
+                <img src="../../images/arrow.png" style="margin-bottom:10px;"/>
+                <span style="padding-left: 10px;font-size:18px;">信息检索</span>
+            </div>
+        </div>
+        <div class="SearchFrame">
+            <span style="font-size:14px;">标题</span>
+            <input type="text" style="width:150px;height:30px;line-height: 24px; margin-left: 10px;" id="txt_Title" />
+            <input type="button" style="width:100px; margin-left:10px;height:30px; line-height: 16px;" 
+            value="目录内搜索" 
+            onclick="SearchInFolder();" 
+            class="SiteBtn" />
+        </div>
+   
+        <div class="GridTitle"><span style="font-size: 16px;font-weight:700">标题</span></div>
+        <div style="font-size:12px;"> 
+            <ul data-bind='foreach: list'>
+                <li> <a data-bind="attr: {href:url},text:title"></a> <span data-bind="text: created"></span></li>
+            </ul>
+        </div>
+ 
+        <input type="button" value="更多" class="SiteBtn" style="width:60px; " />
+    
+    </div>
 
 </div>
 <div class="clear"></div>

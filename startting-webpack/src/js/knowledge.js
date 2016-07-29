@@ -44,34 +44,36 @@ require.ensure(["knockout"], function() {
         viewModel.settings = {
             async: {
                 enable: true,
-                url: "http://22.11.140.236:83/api/Tree/ChildrenNode?key=root_1&nodeType=undefined",
-                autoParam: ["id=key","nodeType"],
+                url: "http://192.168.5.1:3000/channel?pid=-1",
+                autoParam: ["id=pid"],
                 type: "get",
                 dataType: "text",
                 otherParam: {
-                    "tenantID": 3
+                    "tenantId": 3,"_sort":"order","_order":"ASC"
                 }
             },
             simpleData: {
-                enable: true,
-                idKey: "nodeType",
-                pIdKey: "key",
-                rootPId: "T3",
-                isParent:"folder"
+                enable: true, 
+                rootPId: -1
             },
             callback: {
                 onExpand: function(event, treeId, treeNode) {
                     viewModel.breadcrumbs(treeNode.getPath());
+                },
+                onClick:function(event, treeId, treeNode) {
+                    //alert(treeNode.tId + ", " + treeNode.name);
+
+                    viewModel.node(treeNode.id);
                 }
             },
-            data: {
-            	key: {
-            	        name: "title"
-            	}
-            },
-            keep:{
-                    parent:true
-            }
+        //     data: {
+        //     	key: {
+        //     	        name: "title"
+        //     	}
+        //     },
+            // keep:{
+            //         parent:true
+            // }
             // treeNode: {
             // 	isParent: true
             // }
