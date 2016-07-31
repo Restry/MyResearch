@@ -54,13 +54,13 @@
             <tr>
                 <td><span>文件夹</span> </td>
                 <td>
-                    <input placeholder="全部" style="width:154px; padding:5px;" type="text">
+                    <input data-bind="autocomplete: { data: folders, maxItems: 6 }" placeholder="全部" style="width:154px; padding:5px;" type="text"/>
                 </td>
             </tr>
             <tr>
                 <td style="width:30%"></td>
                 <td style="width:70%">
-                    <button type="button" class="sops-btn" onclick="search()">检索</button>
+                    <button type="button" class="sops-btn" data-bind="click: search">检索</button>
                 </td>
             </tr>
         </table>
@@ -75,8 +75,27 @@
 <div class="right col-xs-9">
 
     <div class="result">
-
+        
+        <ol data-bind="foreach: results.pagedItems" class="list-group">
+            <li class="">
+                <a data-bind="attr: {href:id},text:title"></a>
+                <p data-bind="text: body"></p>
+            </li>
+            
+        </ul>
+        
     </div>
 
+    <div class="page">
+        
+        <ul class="pager">
+            <li data-bind="css: {'disabled': !results.prev.enabled()}">
+                <a href="#" data-bind="click: results.prev">Previous</a>
+            </li>
+            <li data-bind="css: {'disabled': !results.next.enabled()}">
+                <a href="#" data-bind="click: results.next">Next</a>
+            </li>
+        </ul>
+    </div>
 </div>
 <div class="clear"></div>

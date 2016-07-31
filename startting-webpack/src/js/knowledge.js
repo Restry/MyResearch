@@ -44,7 +44,7 @@ require.ensure(["knockout"], function() {
         viewModel.settings = {
             async: {
                 enable: true,
-                url: "http://192.168.5.1:3000/channel?pid=-1",
+                url: "http://192.168.10.1:3000/channel?pid=-1",
                 autoParam: ["id=pid"],
                 type: "get",
                 dataType: "text",
@@ -65,7 +65,7 @@ require.ensure(["knockout"], function() {
 
                     viewModel.node(treeNode.id);
                 }
-            },
+            }
         //     data: {
         //     	key: {
         //     	        name: "title"

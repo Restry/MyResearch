@@ -3,14 +3,19 @@
  
     <div class="knowledge">
 
-        <div class="banner">
-            {{page}}
-        </div>
+       
+        <div data-bind="component: {
+            name:'banner',
+            params: { 
+                node: node,
+                breadcrumbs:breadcrumbs()
+            }
+        }"></div>
         <div class="clear"></div>
 
         <div data-bind="component: {
-            name:'serach',
-            params: { settings: settings }
+            name:'search',
+            params: { url: url }
         }"></div>
 
     </div>
