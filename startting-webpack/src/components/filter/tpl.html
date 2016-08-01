@@ -1,0 +1,30 @@
+
+<div class="row sops-gray-bg sops-b-l sops-search-box">
+    <div class="col-xs-1">
+        标题
+        <br />
+        起止日期
+    </div>
+    <div class="col-xs-2">
+        <input type="text" data-bind="value:queryTitle" />
+        <br />
+        <input type="text" class="ui-datepicker-input" data-bind="value:queryDateStart, datePicker:{}" />
+    </div>
+    <div class="col-xs-1">
+        状态 <br />
+        至
+    </div>
+    <div class="col-xs-2">
+        <select data-bind="options:queryStatusData,value:queryStatus"></select>
+        <br />
+        <input type="text" class="ui-datepicker-input" data-bind="value:queryDateEnd, datePicker:{}" />
+    </div>
+    <div class="col-xs-6 text-right">
+        <button data-bind="click:search" class="sops-btn">
+            搜索
+        </button>
+    </div>
+    <div class="clear"></div>
+</div>
+
+

@@ -25,7 +25,7 @@ function viewModel(params) {
     model.node.subscribe(function(value){
        // alert(value);
             $.ajaxSetup ({ cache: false}); 
-       $.getJSON("http://192.168.10.1:3000/docs?cid="+value).done(function(res){
+       $.getJSON("http://192.168.5.1:3000/docs?cid="+value).done(function(res){
             model.list(res);
        })
     })

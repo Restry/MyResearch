@@ -593,6 +593,7 @@
                     bottom = 0;
                 }
 
+                $dropdown.css('position', 'absolute');
                 $dropdown.css('top', top + 'px');
                 $dropdown.css('left', left + 'px');
                 if (bottom !== null) {

@@ -46,7 +46,7 @@ function viewModel(params) {
     model.search=function(){
 
             $.ajaxSetup ({ cache: false}); 
-        $.getJSON("http://192.168.10.1:3000/posts?title_like="+model.Title()).done(function(res){
+        $.getJSON("http://192.168.5.1:3000/posts?title_like="+model.Title()).done(function(res){
             model.results(res);
         })
 

@@ -22,16 +22,16 @@ require.ensure(["knockout"], function() {
         this.topNav =  {
             links: {
                 knowledge: "knowledge.html",
-                question: "question.html",
-                experience: "experience.html"
+                question: "list.html",
+                experience: "list.html"
             }
         }
             
         this.homeCenter = {
             links: {
                 knowledge: "knowledge.html",
-                question: "question.html",
-                experience: "experience.html"
+                question: "list.html",
+                experience: "list.html"
             }
         };
 

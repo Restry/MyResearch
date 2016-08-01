@@ -14,6 +14,7 @@ module.exports = {
     index: path.resolve(SRC_PATH, 'js/index.js'),
     knowledge: path.resolve(SRC_PATH, 'js/knowledge.js'),
     search: path.resolve(SRC_PATH, 'js/search.js'),
+    list: path.resolve(SRC_PATH, 'js/list.js'),
     jquery: ['localjquery']
   },
   output: {
@@ -27,10 +28,10 @@ module.exports = {
     host: "0.0.0.0"
   },
   devtool: 'source-map', 
-//  devtool: 'eval-source-map', 
+ // devtool: 'eval-source-map', 
   resolve: {
     // root: [path.resolve('./src/js')],
-    extensions: ['', '.js', '.min.js'],
+    extensions: ['', '.js','.jsx', '.min.js'],
     alias: {
       "localjquery": path.resolve(SRC_PATH, 'js/lib/jquery.min.js'),
       "jquery": path.resolve(SRC_PATH, 'js/lib/jquery.min.js'),
@@ -41,11 +42,16 @@ module.exports = {
 
   module: {
     loaders: [
-      // {
-      //   test: /\.jsx?$/,
-      //   loaders: ['babel'],
-      //   include: SRC_PATH
-      // },
+      {
+        test: /.jsx?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['es2015']
+        }
+      },
+
+
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract("style-loader", "css-loader", 'sass-loader')
@@ -107,6 +113,14 @@ module.exports = {
       inject: true, //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
       hash: true, //为静态资源生成hash值
       chunks: ['jquery', 'search'],
+    }),
+    new HtmlwebpackPlugin({
+      title: 'sops',
+      filename: '/list.html', //生成的html存放路径，相对于 path
+      template: './src/views/list.hbs', //html模板路径
+      inject: true, //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
+      hash: true, //为静态资源生成hash值
+      chunks: ['jquery', 'list'],
     }),
 
     new ExtractTextPlugin("css/[name].css", {
