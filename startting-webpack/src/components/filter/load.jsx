@@ -5,7 +5,10 @@
 
 
 import html from './tpl.html';
-import "./externals/knockout.datepicker.js"
+/*import "./externals/pickadate.css"
+import "./externals/pickadate.min.js"
+import "./externals/ko.datepicker.js" */
+require( "./externals/knockout.datepicker.js");
 
 module.exports = {
     viewModel: function(params) {
@@ -20,7 +23,6 @@ module.exports = {
 
             alert("Search:"+model.queryTitle());
         }
-
 
         return model;
     },

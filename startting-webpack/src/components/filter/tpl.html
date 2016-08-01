@@ -8,7 +8,7 @@
     <div class="col-xs-2">
         <input type="text" data-bind="value:queryTitle" />
         <br />
-        <input type="text" class="ui-datepicker-input" data-bind="value:queryDateStart, datePicker:{}" />
+        <input type="text" class="ui-datepicker-input" data-bind="datePicker:queryDateStart" />
     </div>
     <div class="col-xs-1">
         状态 <br />
@@ -17,7 +17,7 @@
     <div class="col-xs-2">
         <select data-bind="options:queryStatusData,value:queryStatus"></select>
         <br />
-        <input type="text" class="ui-datepicker-input" data-bind="value:queryDateEnd, datePicker:{}" />
+        <input type="text" class="ui-datepicker-input" data-bind="datePicker:queryDateEnd" />
     </div>
     <div class="col-xs-6 text-right">
         <button data-bind="click:search" class="sops-btn">
