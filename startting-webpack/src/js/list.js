@@ -7,6 +7,8 @@ require.ensure(["knockout"], function() {
 
     ko.components.register('top-nav', require("../components/top-nav/main"));
     ko.components.register('filter', require("../components/filter/load"));
+    ko.components.register('table', require("../components/table/load"));
+    ko.components.register('edit', require("../components/edit/load"));
 
 
 
@@ -19,15 +21,28 @@ require.ensure(["knockout"], function() {
     }
 
     /*<![CDATA[*/
+                        require("./lib/knockout.validation.min.js");
+                        require("./lib/jquery.form.min.js");
 
     function ViewModel() {
         var model = {
             page: {
-                title: "Question"
-            } 
+                title: ko.observable("Question"),
+                action: ko.observable("list"),
+                edit:function (params) {
+
+                    
+                }
+            }
         };
+ 
 
+        model.params = {
+            query: ko.observable(),
+            
 
+            itemTypes: ["1", "2"]
+        }
 
 
         return model;

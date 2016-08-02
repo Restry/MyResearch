@@ -1,0 +1,148 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script src="handlebars.min.js"></script> 
+    <!--[if lt IE 9]>
+      <script src="html5shiv.js"></script>
+      <script src="respond.min.js"></script>
+      <script src="json2.min.js"></script>
+    <![endif]-->
+    <style>
+        .entry {
+            margin: 1em 2em;
+            padding: 1em;
+            border-top: 1px solid #ccc;
+        }
+        
+        .top {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+ 
+    <script id="entry-template" type="text/x-handlebars-template">
+        <div class="entry">
+            <h1>{{title}}</h1>
+            <div class="body">
+                {{{body}}}
+            </div>
+            <div class="foot">
+                {{foot.desc}}
+            </div>
+        </div>
+
+        <div class="entry">
+            {{#list people}} {{#link link}} {{/link}} {{firstName}} {{lastName}}
+
+            <p>
+                {{{../body}}}
+            </p>
+            {{/list}}
+        </div>
+
+        <div class="entry">
+            <h1>{{title}}</h1> {{#with author}}
+            <h2>By {{firstName}} {{lastName}}</h2> {{/with}}
+        </div>
+
+        <div class="entry">
+            <ul class="people_list">
+                {{#each peoples}}
+                <li> {{@key}}:{{@index}}: {{this}}</li>
+                {{else}}
+                <p class="empty">No content</p>
+                {{/each}}
+            </ul>
+        </div>
+
+
+        <div class="entry">
+            {{#list nav}}
+            <a href="{{url}}">{{title}}</a> {{/list}}
+        </div>
+    </script>
+
+
+    <script>
+        Handlebars.registerHelper('list', function(items, options) {
+            var out = "<ul>";
+
+            for (var i = 0, l = items.length; i < l; i++) {
+                out = out + "<li>" + options.fn(items[i]) + "</li>";
+            }
+
+            return out + "</ul>";
+        });
+        Handlebars.registerHelper('link', function(link) {
+            //  url=url||"/#baidu";
+            text = Handlebars.Utils.escapeExpression(link.text);
+            url = Handlebars.Utils.escapeExpression(link.url);
+
+            var result = '<a href="' + url + '">' + text + '</a>';
+
+            return new Handlebars.SafeString(result);
+        });
+
+        var source = $("#entry-template").html();
+        var template = Handlebars.compile(source);
+
+        var context = {
+            title: "My New Post",
+            body: "This is my <b>first</b> post!",
+            foot: {
+                desc: "handlebars is a good frame"
+            },
+            people: [{
+                link: {
+                    text: "Baidu<script>alert('ba');<\/script>",
+                    url: "http://www.baidu.com"
+                },
+                firstName: "Yehuda",
+                lastName: "Katz"
+            }, {
+                link: {
+                    text: "Baidu2",
+                    url: "http://www.baidu.com"
+                },
+                firstName: "Carl",
+                lastName: "Lerche"
+            }, {
+                link: {
+                    text: "Baidu3",
+                    url: "http://www.baidu.com"
+                },
+                firstName: "Alan",
+                lastName: "Johnson"
+            }],
+            peoples: [
+                "Yehuda Katz",
+                "Alan Johnson",
+                "Charles Jolley"
+            ],
+            author: {
+                firstName: "Charles",
+                lastName: "Jolley"
+            },
+            nav: [{
+                url: "http://www.yehudakatz.com",
+                title: "Katz Got Your Tongue"
+            }, {
+                url: "http://www.sproutcore.com/block",
+                title: "SproutCore Blog"
+            }, ]
+        }
+
+    
+
+        var html = template(context);
+        $("#app").html(html);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+
+<div class="row sops-detail sops-b-l">
+    <h3>@Html.DisplayFor(model => model.Title)</h3>
+
+    <label class="col-xs-1 no-padding control-label">
+        编号：
+    </label>
+    <span class="col-xs-3">
+        @Html.DisplayFor(model => model.QuestionNum)
+    </span>
+
+    <label class="col-xs-1 no-padding control-label">
+        类型：
+    </label>
+    <span class="col-xs-3">
+        @Html.DisplayFor(model => model.QuestionType.Split('|')[0])
+    </span>
+
+    <label class="col-xs-1 no-padding control-label">
+        发起组：
+    </label>
+    <span class="col-xs-3">
+        @Html.DisplayFor(model => model.GroupName)
+    </span>
+
+    <div class="clear"></div>
+
+    <label class="col-xs-1 no-padding control-label">
+        优先级：
+    </label>
+    <span class="col-xs-3">
+        @Html.DisplayFor(model => model.LevelName)
+    </span>
+
+    <label class="col-xs-1 no-padding control-label">
+        业务产品：
+    </label>
+    <span class="col-xs-3">
+
+        @Html.Raw(string.IsNullOrEmpty(Model.BusinessProductsString) ? "无" : Model.BusinessProductsString)
+    </span>
+
+    <label class="col-xs-1 no-padding control-label">
+        相关制度：
+    </label>
+    <span class="col-xs-3">
+        @Html.DisplayFor(model => model.RelationSystem)
+    </span>
+
+    <div class="clear"></div>
+    <label class="col-xs-1 no-padding control-label">
+        内容：
+    </label>
+    <span class="col-xs-11">
+        @Html.Raw(Model.Content.Replace("\n", "<br/>"))
+    </span>
+
+    <div class="clear"></div>
+    <label class="col-xs-1 no-padding control-label">
+        联系电话：
+    </label>
+    <span class="col-xs-3">
+        @Html.Raw(Model.Contact)
+    </span>
+    <label class="col-xs-1 no-padding control-label">
+        创建时间：
+    </label>
+    <span class="col-xs-3">
+        @Model.Created.ToString("yyyy-MM-dd HH:mm:ss")
+    </span>
+
+    <div class="clear"></div>
+
+</div>
+
+
+<div class="row sops-feedback sops-gray-bg sops-b-l" style="height:auto">
+
+    <h3>回复内容</h3>
+
+    @for (int i = 0; i < Model.Feedback.Count; i++)
+    {
+        <div class="col-xs-12 no-padding sops-b-l-1">
+            <div class="col-xs-1">
+                <div class="sops-btn sops-btn-view">
+                    @Model.Feedback[i].DealResult
+                </div>
+            </div>
+            <div class="col-xs-11">
+                <span>[@Model.Feedback[i].UpdateTime.ToString("yyyy-MM-dd hh:mm:ss")]</span>
+
+                <div class="sops-feedback-detail">
+                    <strong>@Model.Feedback[i].ParticipantOwner-@Model.Feedback[i].ApproverDisplayName:</strong>
+                    @if (Model.Feedback[i].ParticipantOwner != null && Model.Feedback[i].ParticipantOwner.IndexOf("运控组") != -1)
+                    {
+                        @Html.Raw(Model.Feedback[i].DealComment)
+                    }
+                </div>
+
+            </div>
+        </div>
+    }
+
+    <div class="clear"></div>
+</div>
+<div class="clear"></div>
+
+<div class="row sops-gray-bg">
+    <div class="col-xs-1 no-padding">
+        <h3>附件:</h3>
+    </div>
+    <div class="col-xs-11">
+        <span>
+            @Html.DisplayFor(model => model.FileName)
+        </span>
+    </div>
+
+    <div class="clear"></div>
+</div>
+
+<div class="row">
+    <br />
+    @if (Model.StagesRouter != null && Model.StagesRouter.Count > 0)
+    {
+        <div class="col-xs-9">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <input type="hidden" name="ItemID" value="@Model.ItemID">
+
+                <span>请操作：</span>
+                <input type="hidden" name="QuestionStatus" id="QS" />
+
+                foreach (var item in Model.StagesRouter)
+                {
+                    <input type="submit" class="sops-btn" value="@item" onclick="return SwitchStages('@item');" />
+                }
+            }
+            <div class="clear"></div>
+        </div>
+    }
+    <div class="col-xs-3 pull-right">
+
+        @if (Model.CanEdit.Value)
+        {
+            <a class="sops-btn" href='/@Html.Raw(ViewBag.ItemType)/Edit/@Model.ItemID'>
+                编辑
+            </a>
+        }
+        @if (Model.CanDel.Value)
+        {
+            <a class="sops-btn" href='/@Html.Raw(ViewBag.ItemType)/Delete/@Model.ItemID'>
+                删除
+            </a>
+        }
+        @Html.ActionLink("返回列表", "Index", new { }, new { @class = "sops-btn" })
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>

@@ -31,7 +31,7 @@ module.exports = {
  // devtool: 'eval-source-map', 
   resolve: {
     // root: [path.resolve('./src/js')],
-    extensions: ['', '.js','.jsx', '.min.js'],
+    extensions: ['', '.js','.min.js'],
     alias: {
       "localjquery": path.resolve(SRC_PATH, 'js/lib/jquery.min.js'),
       "jquery": path.resolve(SRC_PATH, 'js/lib/jquery.min.js'),
@@ -42,14 +42,14 @@ module.exports = {
 
   module: {
     loaders: [
-      {
-        test: /.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015']
-        }
-      },
+      // {
+      //   test: /.jsx?$/,
+      //   loader: 'babel-loader',
+      //   exclude: /node_modules/,
+      //   query: {
+      //     presets: ['es2015']
+      //   }
+      // },
 
 
       {
@@ -122,6 +122,16 @@ module.exports = {
       hash: true, //为静态资源生成hash值
       chunks: ['jquery', 'list'],
     }),
+
+    // new HtmlwebpackPlugin({
+    //   title: "page",
+    //   data:{value:"body test",url:"#"},
+    //   filename: '/page.html', //生成的html存放路径，相对于 path
+    //   template: './src/views/master/load.js', //html模板路径
+    //   inject: true, //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
+    //   hash: true, //为静态资源生成hash值
+    //   chunks: ['jquery'],
+    // }),
 
     new ExtractTextPlugin("css/[name].css", {
       publicPath: 'css/',
