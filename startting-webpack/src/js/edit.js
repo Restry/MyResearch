@@ -7,9 +7,7 @@ require.ensure(["knockout"], function() {
 
     ko.components.register('top-nav', require("../components/top-nav/main")); 
     ko.components.register('edit', require("../components/edit/load"));
-
-
-
+ 
     //Temporarily redirect ko.applyBindings to scope it to this live example
     var realKoApplyBindings = ko.applyBindings;
     ko.applyBindings = function() {
@@ -28,12 +26,10 @@ require.ensure(["knockout"], function() {
                 title: ko.observable("提交问题沟通")
             }
         };
- 
-
-
-
+  
         model.params = {
-            url:"/api/metadata"
+            url:"/api/metadata",
+            id:-1
         }
 
 

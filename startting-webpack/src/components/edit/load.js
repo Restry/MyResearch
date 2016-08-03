@@ -1,16 +1,75 @@
 var html = require('./tpl.html');
 
+/*
 
+    public class Item
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+    }
+    public static class Global
+    {
+        public static List<Item> db = new List<Item>(); 
 
-var viewModel = function(pars) {
+    }
+    public class ValuesController : ApiController
+    {
+        
 
+        // GET api/<controller>
+        public IEnumerable<Item> Get()
+        {
+            return Global.db;
+        }
+
+        // GET api/<controller>/5
+        public Item Get(int id)
+        {
+            return Global.db.FirstOrDefault(p=>p.id== id);
+        }
+
+        // POST api/<controller>
+        public int Post([FromBody]Item item)
+        {
+            Global.db.Add(item);
+            return Global.db.Count;
+        }
+
+        // PUT api/<controller>/5
+        public bool Put(int id, [FromBody]Item item)
+        {
+            var i = Global.db.FirstOrDefault(p => p.id == id);
+            i.name = item.name;
+            return true;
+        }
+
+        // DELETE api/<controller>/5
+        public void Delete(int id)
+        {
+        }
+    }
+*/
+
+var viewModel = function(pars) { 
     var self = this;
- 
-    self.uploadMaxSize =params() && params().uploadMaxSize || 0;
-    self.Groups = params() && params().Groups || []
-    self.QuestionTypes = params() && params().PostType || []
-    self.BusinessProducts = params() && params().BusinessProducts || []
-    self.Levels = params() && params().Levels || []
+
+    $.ajax({
+        url:pars.url,
+        cache:false,
+        type:"GET",
+        async:false,
+        success:function(res){
+            self.uploadMaxSize =res.uploadMaxSize || 0;
+            self.Groups = res.Groups || []
+            self.QuestionTypes = res.PostType || []
+            self.BusinessProducts = res.BusinessProducts || []
+            self.Levels = res.Levels || []
+        },
+        error:function(res){
+            
+        }
+    })
+
 
     ko.validation.rules["checked"] = {
         validator: function(value) {
@@ -84,7 +143,7 @@ var viewModel = function(pars) {
             viewModel.Message('正在提交更新中，请稍后...');
         },
         uploadProgress: function(event, position, total, percentComplete) {
-            var percentVal = percentComplete + '%';
+            //var percentVal = percentComplete + '%';
 
         },
         success: function() {
@@ -100,7 +159,7 @@ var viewModel = function(pars) {
 
             viewModel.Message(msg);
             if (xhr.responseText == "Done!") {
-                location.href = "/@ViewBag.ItemType";
+                location.href = "list.html";
             }
             viewModel.submitEnable(true);
             viewModel.Message('');
@@ -132,3 +191,4 @@ module.exports = {
     viewModel: viewModel,
     template: html
 }
+
