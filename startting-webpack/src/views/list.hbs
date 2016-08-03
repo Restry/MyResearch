@@ -2,16 +2,13 @@
 {{#> _layouts}}
 
 
-
-
-<div data-bind="visible: page.action()=='list'">
-
+ 
         <div class="row sops-b-l" style="height:50px;line-height:50px">
             <div class="col-xs-3">
                 <h3 data-bind="text:page.title"> </h3>
             </div>
             <div class="col-xs-9 text-right" style="font-size: 2em;"> 
-                <a data-bind="click:page.edit" class="sops-btn sops-btn-add">+</a>
+                <a href="edit.html" class="sops-btn sops-btn-add">+</a>
             </div>
             <div class="clear"></div>
         </div>
@@ -29,8 +26,7 @@
             name:'table',
             params: params
         }"></div>
-
-</div>
+ 
  
 
 

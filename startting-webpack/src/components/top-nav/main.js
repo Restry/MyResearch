@@ -1,4 +1,5 @@
 var html = require("./top-nav.html");
+var user =require("../userinfo/load");
 
 function viewModel(params) {
     this.links = params.links || {
@@ -6,7 +7,7 @@ function viewModel(params) {
         question: "question.html",
         experience: "experience.html"
     };
-
+    alert(JSON.stringify(user));
 }
 
 

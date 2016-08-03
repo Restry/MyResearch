@@ -5,9 +5,8 @@ require("../components/ieCompatible/init")
 
 require.ensure(["knockout"], function() {
 
-    ko.components.register('top-nav', require("../components/top-nav/main"));
-    ko.components.register('filter', require("../components/filter/load"));
-    ko.components.register('table', require("../components/table/load")); 
+    ko.components.register('top-nav', require("../components/top-nav/main")); 
+    ko.components.register('edit', require("../components/edit/load"));
 
 
 
@@ -19,25 +18,22 @@ require.ensure(["knockout"], function() {
         return realKoApplyBindings.apply(ko, arguments);
     }
 
-    /*<![CDATA[*/ 
+    /*<![CDATA[*/
+    require("./lib/knockout.validation.min.js");
+    require("./lib/jquery.form.min.js");
+
     function ViewModel() {
         var model = {
             page: {
-                title: ko.observable("问题沟通"),
-                
-                edit:function (params) {
-
-                    
-                }
+                title: ko.observable("提交问题沟通")
             }
         };
  
 
-        model.params = {
-            query: ko.observable(), //点击搜索后的过滤串
-            
 
-            filterTypes: ["1", "2", "3"]
+
+        model.params = {
+            url:"/api/metadata"
         }
 
 

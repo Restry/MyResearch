@@ -43,7 +43,7 @@ module.exports = {
         model.queryTitle = ko.observable();
         model.queryDateStart = ko.observable();
         model.queryDateEnd = ko.observable();
-        model.queryStatusData = params.itemTypes;
+        model.queryStatusData = params.filterTypes;
         model.queryStatus = ko.observable();
         model.search = params.click || function() {
 

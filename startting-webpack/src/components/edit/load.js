@@ -5,10 +5,13 @@ var html = require('./tpl.html');
 var viewModel = function(pars) {
 
     var self = this;
-    var params=pars.params;
-    self.title = params() && params().title || "";
+ 
+    self.uploadMaxSize =params() && params().uploadMaxSize || 0;
+    self.Groups = params() && params().Groups || []
+    self.QuestionTypes = params() && params().PostType || []
+    self.BusinessProducts = params() && params().BusinessProducts || []
+    self.Levels = params() && params().Levels || []
 
-    window.uploadMaxSize =params() && params().uploadMaxSize || 0;
     ko.validation.rules["checked"] = {
         validator: function(value) {
             if (!value)
@@ -29,11 +32,6 @@ var viewModel = function(pars) {
             message: "最多输入70个字符"
         }
     });
-
-    self.Groups = params() && params().Groups || []
-    self.QuestionTypes = params() && params().PostType || []
-    self.BusinessProducts = params() && params().BusinessProducts || []
-    self.Levels = params() && params().Levels || []
 
     self.QuestionType = ko.observable().extend({
         checked: {

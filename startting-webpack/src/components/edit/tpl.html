@@ -1,49 +1,39 @@
-    <div class="clear"></div>
+<div class="row sops-b-l sops-gray-bg">
 
-    <div class="row sops-b-l">
-
-        <h3 data-bind="text: title" class="col-xs-3">
-             
-        </h3>
-
-        <div class="clear"></div>
-    </div>
-    <div class="row sops-b-l sops-gray-bg">
-
-        <label class="col-xs-1 control-label">
+    <label class="col-xs-1 control-label">
             标题<span style="color:red;">*</span>:
         </label>
-        <span class="col-xs-2">
+    <span class="col-xs-2">
             <input type="text" name="Title" data-bind="value:Title" />
         </span>
 
-        <div data-bind="visible:isGroupVisible"> 
-            <label class="col-xs-1 control-label">
+    <div data-bind="visible:isGroupVisible">
+        <label class="col-xs-1 control-label">
                 发起组<span style="color:red;">*</span>:
             </label>
-            <span class="col-xs-3">
+        <span class="col-xs-3">
                 <select name="Group" data-bind="options: Groups,
                                             optionsText:'Name',
                                             optionsValue:'Value',
                                             value:Group"></select>
                 <span class="validationMessage" data-bind="validationMessage:Group"></span>
-            </span>
-        </div>
- 
-        <label class="col-xs-1 control-label">
+        </span>
+    </div>
+
+    <label class="col-xs-1 control-label">
             
             优先级<span style="color:red;">*</span>:
         </label>
-        <span class="col-xs-1">
+    <span class="col-xs-1">
             <select name="Level" data-bind="options: Levels,
                                             optionsText:'Name',
                                             optionsValue:'Value',value:Level"></select>
         </span>
 
-        <label class="col-xs-1 control-label">
+    <label class="col-xs-1 control-label">
             类型<span style="color:red;">*</span>:
         </label>
-        <span class="col-xs-2">
+    <span class="col-xs-2">
             
 
             <select name="QuestionType" data-bind="options: QuestionTypes,
@@ -55,107 +45,105 @@
 
             <span class="validationMessage"
                   data-bind="validationMessage:QuestionType"></span>
-        </span> 
-        <div class="clear"></div>
-    </div>
-
+    </span>
     <div class="clear"></div>
-    <div class="row sops-gray-bg">
-        <label class="control-label">
+</div>
+
+<div class="clear"></div>
+<div class="row sops-gray-bg">
+    <label class="control-label">
             业务产品:
-        </label> 
-    </div>
+        </label>
+</div>
 
-    <div class="clear"></div>
-    <div class="row sops-b-l">
-        
-            <!-- ko foreach: BusinessProducts-->
-            <h3 data-bind="text:Group"></h3>
-            <div class="editor-sub-field">
-                <ul>
-                    <!-- ko foreach : Terms-->
-                    <li>
-                        <span class="bp">
+<div class="clear"></div>
+<div class="row sops-b-l">
+
+    <!-- ko foreach: BusinessProducts-->
+    <h3 data-bind="text:Group"></h3>
+    <div class="editor-sub-field">
+        <ul>
+            <!-- ko foreach : Terms-->
+            <li>
+                <span class="bp">
                             <input name="BusinessProduct" type="checkbox"
                                    data-bind="checked: $root.BusinessProduct,attr:{value:Name+'|'+Value,id:'BP'+Value}" />
                             <label style="display:inline;" data-bind="text:Name,attr:{'for':'BP'+Value}"></label>
                         </span>
-                    </li>
-                    <!-- /ko -->
-                </ul>
-            </div>
-            <div style="clear:both"></div>
+            </li>
             <!-- /ko -->
-        <br />
-        <div class="clear"></div>
+        </ul>
     </div>
+    <div style="clear:both"></div>
+    <!-- /ko -->
+    <br />
+    <div class="clear"></div>
+</div>
 
-    <div class="row sops-b-l sops-gray-bg">
-        <label class="col-xs-1 control-label">
+<div class="row sops-b-l sops-gray-bg">
+    <label class="col-xs-1 control-label">
             相关制度:
         </label>
-        <span class="col-xs-3">
+    <span class="col-xs-3">
             <input type="text" id="RelationSystem" name="RelationSystem" data-bind="value:RelationSystem" />
         </span>
 
-        <div class="clear"></div>
-    </div>
+    <div class="clear"></div>
+</div>
 
 
-    <div class="row sops-b-l sops-gray-bg" style=" height:auto;">
-        <label class="col-xs-1 control-label">
+<div class="row sops-b-l sops-gray-bg" style=" height:auto;">
+    <label class="col-xs-1 control-label">
             内容<span style="color:red;">*</span>:
         </label>
-        <span class="col-xs-10"> 
+    <span class="col-xs-10"> 
             <textarea name="Content" id="Content" data-bind="value:Content"></textarea>
         </span>
 
-        <div class="clear"></div>
-    </div>
+    <div class="clear"></div>
+</div>
 
-    <div class="row sops-b-l sops-gray-bg">
-        <label class="col-xs-1 control-label">
+<div class="row sops-b-l sops-gray-bg">
+    <label class="col-xs-1 control-label">
             联系电话<span style="color:red;">*</span>:
         </label>
-        <span class="col-xs-3">
+    <span class="col-xs-3">
             <input type="text" id="Contact" name="Contact" data-bind="value:Contact" />
         </span>
 
-        <div class="clear"></div>
-    </div>
+    <div class="clear"></div>
+</div>
 
-    <div class="row sops-b-l sops-gray-bg">
-        <label class="col-xs-1 control-label">
+<div class="row sops-b-l sops-gray-bg">
+    <label class="col-xs-1 control-label">
             附件:
         </label>
-        <span class="col-xs-3">
+    <span class="col-xs-3">
             <input type="file" id="Avatar" onchange="fileSizeCheck(this);" name="upload" />
             <span class="field-validation-error" data-valmsg-for="Avatar" style="display:none">
-                <span for="Avatar" generated="true">文件大小超过了 @ViewBag.UploadLimitSize kb.不允许上传！</span>
-            </span>
+                <span for="Avatar" generated="true">文件大小超过了 <span data-bind="text: uploadMaxSize"></span>   kb.不允许上传！</span>
+    </span>
 
-            <span class="field-validation-error" data-valmsg-for="Avatar">
+    <span class="field-validation-error" data-valmsg-for="Avatar">
                 <span for="Avatar" generated="true">@ViewBag.SizeLimit</span>
-            </span>
+    </span>
 
-        </span>
+    </span>
 
-        <div class="clear"></div>
+    <div class="clear"></div>
+</div>
+
+<input type="hidden" name="ItemTypeID" value="@ViewBag.ItemTypeID" />
+
+<div class="row">
+    <br />
+    <div class="col-xs-5">
+
+        <input type="submit" class="sops-btn " value="提交" data-bind=" click:submit,enable:submitEnable" />
+        <span class='field-validation-error' data-bind="text:Message"></span>
+
     </div>
 
-    <input type="hidden" name="ItemTypeID" value="@ViewBag.ItemTypeID" />
-
-    <div class="row">
-        <br /> 
-        <div class="col-xs-5">
-
-            <input type="submit" class="sops-btn " value="提交" data-bind=" click:submit,enable:submitEnable" />
-            <span class='field-validation-error' data-bind="text:Message"></span>
-
-        </div>
-
-        @Html.ActionLink("返回列表", "Index", new { },
-         new { @class = "sops-btn pull-right" })
-     
-        <div class="clear"></div>
-    </div>
+    <a href="list.html" class="sops-btn pull-right">返回列表</a>
+    <div class="clear"></div>
+</div>
