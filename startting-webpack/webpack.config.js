@@ -15,6 +15,7 @@ module.exports = {
     knowledge: path.resolve(SRC_PATH, 'js/knowledge.js'),
     search: path.resolve(SRC_PATH, 'js/search.js'),
     list: path.resolve(SRC_PATH, 'js/list.js'),
+    edit: path.resolve(SRC_PATH, 'js/edit.js'),
     jquery: ['localjquery']
   },
   output: {
@@ -123,6 +124,14 @@ module.exports = {
       chunks: ['jquery', 'list'],
     }),
 
+    new HtmlwebpackPlugin({
+      title: 'edit',
+      filename: '/edit.html', //生成的html存放路径，相对于 path
+      template: './src/views/edit.hbs', //html模板路径
+      inject: true, //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
+      hash: true, //为静态资源生成hash值
+      chunks: ['jquery', 'edit'],
+    }),
     // new HtmlwebpackPlugin({
     //   title: "page",
     //   data:{value:"body test",url:"#"},

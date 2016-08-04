@@ -60,6 +60,9 @@ var viewModel = function(pars) {
         async:false,
         success:function(res){
             self.uploadMaxSize =res.uploadMaxSize || 0;
+            self.ItemType=res.ItemType||"";
+            self.ItemTypeID=res.ItemTypeID||"";
+
             self.Groups = res.Groups || []
             self.QuestionTypes = res.PostType || []
             self.BusinessProducts = res.BusinessProducts || []
@@ -139,8 +142,8 @@ var viewModel = function(pars) {
     var options = {
         type: "POST",
         beforeSend: function() {
-            viewModel.submitEnable(false)
-            viewModel.Message('正在提交更新中，请稍后...');
+            self.submitEnable(false)
+            self.Message('正在提交更新中，请稍后...');
         },
         uploadProgress: function(event, position, total, percentComplete) {
             //var percentVal = percentComplete + '%';
@@ -157,12 +160,12 @@ var viewModel = function(pars) {
                 msg = "系统出现未知异常，请检查附件是否超过5MB";
             }
 
-            viewModel.Message(msg);
+            self.Message(msg);
             if (xhr.responseText == "Done!") {
                 location.href = "list.html";
             }
-            viewModel.submitEnable(true);
-            viewModel.Message('');
+            self.submitEnable(true);
+            self.Message('');
         }
     };
     $('form').ajaxForm(options);

@@ -28,7 +28,7 @@ require.ensure(["knockout"], function() {
         };
   
         model.params = {
-            url:"/api/metadata",
+            url:"http://192.168.5.1:3001/Question",
             id:-1
         }
 
