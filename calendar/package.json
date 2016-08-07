@@ -1,0 +1,12 @@
+{
+  "name": "calendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "get.js",
+  "scripts": {
+    "build": "webpack --progress & http-server dist -p 8004 -c-1",
+    "dev": "webpack-dev-server --inline --content-base dist"
+  },
+  "author": "restry",
+  "license": "ISC"
+}
