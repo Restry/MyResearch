@@ -21,7 +21,7 @@ module.exports = {
     output: {
         path: BUILD_PATH,
         filename: 'js/[name].js',
-        publicPath: '',
+        publicPath: '/',
         chunkFilename: "js/[chunkhash:8].[name].js"
     },
     //enable dev source map
@@ -30,6 +30,7 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
         hot: true,
+        host:'0.0.0.0',
         inline: true,
         progress: true
     },
@@ -64,10 +65,10 @@ module.exports = {
             loader: "html?-minimize"
         }, {
             test: /\.(jpe?g|png|gif|svg)$/i,
-            loader: 'url?limit=8192&name=../images/[hash:8].[name].[ext]'
+            loader: 'url?limit=8192&name=images/[hash:8].[name].[ext]'
         }, {
             test: /\.(woff|woff2|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-            loader: 'file-loader?name=../fonts/[name].[ext]'
+            loader: 'file-loader?name=fonts/[name].[ext]'
         }]
     },
     plugins: [
@@ -75,7 +76,8 @@ module.exports = {
             React: 'react',
             ReactDOM: "react-dom",
             $: "jquery",
-            "jQuery": "jquery"
+            bootstrap:"bootstrap",
+            jQuery: "jquery"
         }),
         new HtmlwebpackPlugin({
             title: 'My second react app',
@@ -99,7 +101,7 @@ module.exports = {
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: ['react'],
-            filename: "js/[chunkhash:8].[name].js",
+            filename: "js/[hash].[name].js",
             minChunks: Infinity
         })
     ]

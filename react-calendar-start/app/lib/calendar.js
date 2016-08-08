@@ -951,12 +951,15 @@ if(!String.prototype.formatNum) {
 							type: 'GET',
 							async: false
 						}).done(function(json) {
-							if(!json.success) {
-								$.error(json.error);
-							}
+							// if(!json.success) {
+							// 	$.error(json.error);
+							// }
 							if(json.result) {
 								events = json.result;
 							}
+                            if(json){
+								events = json;                                
+                            }
 						});
 						return events;
 					};
