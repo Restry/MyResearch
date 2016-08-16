@@ -1,0 +1,67 @@
+.list-item,
+.list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.item-primaryText {
+    width: auto;
+    color: rgb(33, 33, 33);
+    cursor: auto;
+    display: block;
+   font-size: 14px;
+    font-weight: normal;
+    list-style-type: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-right: 0px;
+    padding-top: 15px;
+    position: static;
+    text-align: left;
+    text-decoration: underline;
+    text-overflow: ellipsis;
+    top: -4px;
+    white-space: nowrap;
+}
+
+.item-secondaryText {
+    color: rgb(102, 102, 102);
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    height: 50px;
+    line-height: 25px;
+    list-style-type: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-right: 30px;
+    padding-top: 6px;
+    position: relative;
+    text-align: left;
+    text-overflow: ellipsis;
+    top: -7px;
+    white-space: normal;
+}
+
+.item-secondaryText b {
+    color: red;
+}
+
+.item-tertiaryText {
+    color: rgb(118, 118, 118);
+    display: block;
+      font-size: 14px;
+    font-weight: normal;
+    height: 19px;
+    list-style-type: none;
+    margin-bottom: -4px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-right: 30px;
+    position: relative;
+    text-align: left;
+    text-overflow: ellipsis;
+    top: -9px;
+    white-space: nowrap;
+}
