@@ -65,3 +65,10 @@
     top: -9px;
     white-space: nowrap;
 }
+
+.sops-userinfo{
+
+}
+.sops-userinfo,.sops-userpic{
+    margin-top: 1em;
+}
