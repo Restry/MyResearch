@@ -2,19 +2,16 @@
 var Calendar= require('./components/holidays/Calendar.jsx');
 var Navigation= require('./components/Navigation.jsx');
 var Banner= require('./components/Banner.jsx');
+ 
+import '../lib/bootstrap/js/bootstrap.min.js'; 
 
-
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap';
-           
 var App = React.createClass({ 
   render: function() {    
     return (
         <div className="container-fluid">
             <div className="row">
                 
-                <Banner />
-
+                <Banner /> 
                 <div className="row asm-center">
 
                     <div className="col-xs-2">
@@ -22,11 +19,11 @@ var App = React.createClass({
                     </div>
             
                     <div className="col-xs-10 sops-right-slide no-padding">
-                    <Calendar />
+                        <Calendar />
                     </div>
-                    </div>
-                    </div>
-                    </div>
+                </div>
+            </div>
+        </div>
         );
     }
 });

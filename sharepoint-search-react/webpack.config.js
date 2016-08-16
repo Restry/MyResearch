@@ -25,6 +25,8 @@ module.exports = {
         progress: true
     },
     module: {
+        noParse: [/lib/,/libs/],
+
         loaders: [{
             test: /.jsx?$/,
             loader: 'babel-loader',

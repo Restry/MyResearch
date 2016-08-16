@@ -1,13 +1,9 @@
-
-
 var SearchBox = require('./components/SearchBox.jsx');
 var SearchStatus = require('./components/SearchStatus.jsx');
 var SearchResults = require('./components/SearchResults.jsx');
 var Pages = require('./components/Page.jsx');
 var Navigation= require('./components/Navigation.jsx');
 var Banner= require('./components/Banner.jsx');
-
-require('bootstrap/dist/css/bootstrap.css');
 
 require('../css/styles.css');
 
