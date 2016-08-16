@@ -958,7 +958,7 @@ if(!String.prototype.formatNum) {
 								events = json.result;
 							}
                             if(json){
-								events = json;                                
+								events = json.value;                                
                             }
 						});
 						return events;

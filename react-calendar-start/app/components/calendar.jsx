@@ -7,7 +7,7 @@ export default React.createClass({
     getInitialState: function() {
         return {
             options: {
-                events_source: 'http://localhost:61411/api/calendar',
+                events_source: 'http://localhost:2580/odata/Calendars',
                 view: 'month',
                 tmpl_path: 'tmpls/',
                 tmpl_cache: false,
@@ -47,6 +47,9 @@ export default React.createClass({
         // this.state.myModel
       //  $(this.refs.placeholder).append(calendarWarp);
         var options = this.state.options;
+
+            $.ajaxSetup ({ cache: false}); 
+            jQuery.support.cors = true;
 
         require.ensure([], function() {
 
@@ -88,8 +91,7 @@ export default React.createClass({
     },
 
     render: function() {
-        return <div className="container">
-            
+        return <div className="container"> 
                 <div className="page-header">
                     <div className="pull-right form-inline">
                         <div className="btn-group">
@@ -120,7 +122,7 @@ export default React.createClass({
 
                 <div className="clearfix"></div>
 
-
+{/*
                 <div className="modal fade" id="events-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                     <div className="modal-dialog">
                         <div className="modal-content">
@@ -136,7 +138,7 @@ export default React.createClass({
                         </div>
                     </div>
                 </div>
-            
+             */}
             </div>;
     }
 });

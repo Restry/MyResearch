@@ -23,10 +23,12 @@ export default class Plist extends React.Component {
             });
 
        })
+        
+            jQuery.support.cors = true;
 
         this.setState({"firstView": true});
         this.setState({"loading": true, 'firstView': false});
-        let url = 'http://localhost:61411/api/calendar';
+        let url = 'http://localhost:2580/odata/Calendars';
         var self =this;
         $.ajaxSetup ({ cache: false}); 
 
@@ -34,7 +36,7 @@ export default class Plist extends React.Component {
                 dataType: 'json',
                 type: 'GET',
                 async: false}).done(function(data) {
-                                self.setState({"loading":false, "list": data});
+                                self.setState({"loading":false, "list": data.value});
                             }) 
   }
 
@@ -48,10 +50,13 @@ handleSubmit(event) {
     const repo = event.target.elements[1].value
     const path = `/repos/${userName}/${repo}`
 
+            $.ajaxSetup ({ cache: false}); 
+            jQuery.support.cors = true;
+
     $.ajax({
         type:"POST",
         contentType: "application/json",
-        url:"http://localhost:61411/api/calendar",
+        url:"http://localhost:2580/odata/Calendars",
         data:JSON.stringify({
             title:event.target.elements[0].value,
             class:"",
@@ -93,9 +98,9 @@ handleSubmit(event) {
             <ul className="nav nav-list"> 
                 {this.state.list.map(item=>{
                     return (
-                        <li key={item.id}>
+                        <li key={item.Id}>
                             <a title={item.title}> 
-                                <span className={item.class}>[{item.id}]</span>
+                                <span className={item.class}>[{item.Id}]</span>
                                 {item.title.length>15?item.title.substring(0,15):item.title}[{new Date(parseInt(item.start)).toLocaleDateString()}]-[{new Date(parseInt(item.end)).toLocaleDateString()}]
                             </a> 
                         </li>
