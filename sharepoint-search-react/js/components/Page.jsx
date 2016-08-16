@@ -1,4 +1,4 @@
-var React = require('react');
+//var React = require('react');
  
 var SearchActions = require('../actions/SearchActions');
 var SearchResultsStore = require('../stores/SearchResultsStore');
@@ -40,7 +40,8 @@ nextPage: function(){
   render: function() {
 
         var items = []; 
-        for (var index = 1; index <= this.state.pageCount; index++) {
+        var count =(this.state.pageCount>10?10:this.state.pageCount);
+        for (var index = 1; index <= count; index++) {
             items.push(<li className={this.state.pageIndex==index?"active":""} key={index}>
             <a onClick={this.switchPage} href="#">{index}</a>
             </li>)

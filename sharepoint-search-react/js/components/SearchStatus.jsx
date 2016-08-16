@@ -1,4 +1,4 @@
-var React = require('react');
+//var React = require('react');
 var SearchResultsStore = require('../stores/SearchResultsStore');
 var Spinner = require('./Spinner.jsx');
 

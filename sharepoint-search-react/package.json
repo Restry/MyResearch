@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --port=8443 --https",
-    "dist": "webpack -p"
+    "build": "webpack --progress --profile --colors -w",
+    "dev": "webpack-dev-server --progress --profile --colors --hot",
+    "view": "webpack -w --colors --progress | http-server build -p 8004 -c-1"
   },
   "keywords": [],
   "author": "",
