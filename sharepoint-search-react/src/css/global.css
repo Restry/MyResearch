@@ -1,9 +1,9 @@
 ﻿
-
+ 
 .sops-top{height:89px;  
           background:url(../images/home_03.jpg) repeat-x bottom;}  
 .no-padding {padding:0}
-.list-group-item{background-color:#D9D9D9;height:41px;border-bottom:2px solid #fff;border-left:2px solid #fff;font-size:1.2em}
+/*.list-group-item{height:41px;border-bottom:2px solid #fff;border-left:2px solid #fff;font-size:1.2em}*/
 .list-group{margin-bottom:0}
 
 .sops-left-nav { font-size:1.5em;}

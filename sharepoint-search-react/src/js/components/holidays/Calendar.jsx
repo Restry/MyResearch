@@ -95,7 +95,7 @@ var calendar = class  extends React.Component {
         require.ensure([], function() {
  
             require('imports?this=>window!./libs/jstz.min.js');
-            require('imports?moment=moment,_=underscore!./libs/calendar');
+            require('imports?_=underscore!./libs/calendar');
             require('./libs/calendar.zh-cn.js')
  
 

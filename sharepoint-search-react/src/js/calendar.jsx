@@ -3,7 +3,7 @@ var Calendar= require('./components/holidays/Calendar.jsx');
 var Navigation= require('./components/Navigation.jsx');
 var Banner= require('./components/Banner.jsx');
  
-import '../lib/bootstrap/js/bootstrap.min.js'; 
+import '../extlibs/bootstrap/js/bootstrap.min.js'; 
 
 var App = React.createClass({ 
   render: function() {    

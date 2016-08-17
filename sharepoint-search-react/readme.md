@@ -1,6 +1,6 @@
 # SharePoint Search using React and Webpack
 
-This application allows you to search in your SharePoint tenant using the SharePoint Search REST API.
+搜索功能和工作日编辑功能
 
 ![Screenshot application](assets/screenshot.png)
 

@@ -5,8 +5,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        app:'./js/app.jsx',
-        calendar:'./js/calendar.jsx'
+        app:'./src/js/app.jsx',
+        calendar:'./src/js/calendar.jsx'
     },
 
     output: {
@@ -25,8 +25,7 @@ module.exports = {
         progress: true
     },
     module: {
-        noParse: [/lib/,/libs/],
-
+        noParse:[/extlibs/],
         loaders: [{
             test: /.jsx?$/,
             loader: 'babel-loader',
@@ -54,16 +53,16 @@ module.exports = {
     plugins:[
         new HtmlwebpackPlugin({
             title: '搜索页',
-            filename: '/search.html', //生成的html存放路径，相对于 path
-            template: './template/_layouts.html', //html模板路径
+            filename: '/search.aspx', //生成的html存放路径，相对于 path
+            template: './src/_layouts.html', //html模板路径
             inject: true, //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
             hash: true, //为静态资源生成hash值
             chunks: ["app","common"]
         }),
         new HtmlwebpackPlugin({
             title: '工作日',
-            filename: '/holidays.html', //生成的html存放路径，相对于 path
-            template: './template/_layouts.html', //html模板路径
+            filename: '/holidays.aspx', //生成的html存放路径，相对于 path
+            template: './src/_layouts.html', //html模板路径
             inject: true, //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
             hash: true, //为静态资源生成hash值
             chunks: ["calendar","common"]

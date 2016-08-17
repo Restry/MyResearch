@@ -7,6 +7,12 @@
  */
 "use strict";
 
+Date.prototype.addDay = function(day) {
+    var d= new Date(this.getTime());
+    d.setDate(d.getDate()+day);
+    return new Date(d);
+}
+
 Date.prototype.getWeek = function(iso8601) {
 	if (iso8601) {
 		var target = new Date(this.valueOf());
@@ -950,8 +956,8 @@ if(!String.prototype.formatNum) {
                         var d_from = self.options.position.start;
                         var d_to = self.options.position.end;
 
-                        d_from = moment(d_from).add(-5, "day")._d;
-                        d_to = moment(d_to).add(5, "day")._d;
+                        d_from = d_from.addDay(-5);
+                        d_to = d_to.addDay(5);
 
                         var params = {start: d_from.getTime(), end: d_to.getTime(), utc_offset_from: d_from.getTimezoneOffset(), utc_offset_to: d_to.getTimezoneOffset()};
 
