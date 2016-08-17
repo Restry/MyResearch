@@ -56,7 +56,7 @@ function search(searchQuery, pageIndex) {
     var mark = (new Date()).getTime();
     var search = `Keywords=${searchQuery}&Start=${pageIndex}&PageSize=10`;
 
-    xhr.open('POST', `/sopsapi/api/Search/ServerSearchResult?_=${mark}`, true);
+    xhr.open('POST', `/sopsapi/api/SPSearch/ServerSearchResult?_=${mark}`, true);
     //  xhr.open('POST', `/sopsapi/api/Search/ClientSearchResult?_=${mark}`, true);
 
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
