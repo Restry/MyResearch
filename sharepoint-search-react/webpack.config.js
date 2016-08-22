@@ -6,7 +6,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     entry: {
         app:'./src/js/app.jsx',
-        calendar:'./src/js/calendar.jsx'
+        calendar:'./src/js/calendar.jsx',
+        index:'./src/locator.jsx'
     },
 
     output: {
@@ -66,6 +67,14 @@ module.exports = {
             inject: true, //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
             hash: true, //为静态资源生成hash值
             chunks: ["calendar","common"]
+        }),
+        new HtmlwebpackPlugin({
+            title: 'SOPS',
+            filename: '/index.aspx', //生成的html存放路径，相对于 path
+            template: './src/_layouts.html', //html模板路径
+            inject: true, //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
+            hash: true, //为静态资源生成hash值
+            chunks: ["index","common"]
         }),
         new ExtractTextPlugin("css/[name].css", {
             publicPath: 'css/',
