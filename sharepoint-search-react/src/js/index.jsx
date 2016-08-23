@@ -9,7 +9,7 @@ export default React.createClass({
             <div className="container-fluid">
                 <div className="row">
                     <Banner />
-                        <div className="row asm-center">
+                        <div className="asm-center">
                             <div className="col-xs-2">
                                 <Navigation />
                             </div>

@@ -26,7 +26,7 @@ class Table extends React.Component {
     }; 
   }
     filter(){
-        this.state.table.ajax.data=getFilterParams();
+        this.state.table.ajax.data= this.getFilterParams();
         this.state.table.ajax.reload();
     }
     binding(table){
