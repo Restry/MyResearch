@@ -1,5 +1,5 @@
 //var React = require('react');
-var SearchActions = require('../actions/SearchActions');
+var SearchActions = require('../../actions/SearchActions');
 
 var SearchBox = React.createClass({
   getInitialState: function() { 

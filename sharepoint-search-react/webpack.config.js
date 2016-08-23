@@ -5,8 +5,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        app:'./src/js/app.jsx',
-        calendar:'./src/js/calendar.jsx',
+        // app:'./src/js/app.jsx',
+        // calendar:'./src/js/calendar.jsx',
         index:'./src/locator.jsx'
     },
 
@@ -48,11 +48,17 @@ module.exports = {
             loader: 'file-loader?name=fonts/[name].[ext]'
         }]
     },
+    resolve: {
+        // root: [path.resolve('./src/js')],
+        extensions: ['', '.js', '.jsx']
+    },
     externals: {
-        'react': 'React'
+        'react': 'React',
+        'jquery': '$',
+        'jQuery': '$' 
     },
     plugins:[
-        new HtmlwebpackPlugin({
+       /* new HtmlwebpackPlugin({
             title: '搜索页',
             filename: '/search.aspx', //生成的html存放路径，相对于 path
             template: './src/_layouts.html', //html模板路径
@@ -67,7 +73,7 @@ module.exports = {
             inject: true, //允许插件修改哪些内容，inject: true, 包括head与body   inject: head, 只到head
             hash: true, //为静态资源生成hash值
             chunks: ["calendar","common"]
-        }),
+        }),*/
         new HtmlwebpackPlugin({
             title: 'SOPS',
             filename: '/index.aspx', //生成的html存放路径，相对于 path

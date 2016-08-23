@@ -1,7 +1,7 @@
 //var React = require('react');
  
-var SearchActions = require('../actions/SearchActions');
-var SearchResultsStore = require('../stores/SearchResultsStore');
+var SearchActions = require('../../actions/SearchActions');
+var SearchResultsStore = require('../../stores/SearchResultsStore');
 
 function getSearchResultsState() {
   return SearchResultsStore.getPageinfo()

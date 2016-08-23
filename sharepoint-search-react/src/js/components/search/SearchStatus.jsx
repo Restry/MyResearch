@@ -1,5 +1,5 @@
 //var React = require('react');
-var SearchResultsStore = require('../stores/SearchResultsStore');
+var SearchResultsStore = require('../../stores/SearchResultsStore');
 var Spinner = require('./Spinner.jsx');
 
 function getSearchResultsState() {
