@@ -69,8 +69,8 @@ class Settings extends React.Component {
             <div className="col-xs-2">
             
                 <div className="list-group">
-                    {this.state.setList.map((set)=>{
-                        return (<a key={set.key} onClick={this.handleClick.bind(this)} className="list-group-item" data-key={set.key}>{set.title}</a>)
+                    {this.state.setList.map((set,i)=>{
+                        return (<a key={i} onClick={this.handleClick.bind(this)} className="list-group-item" data-key={set.key}>{set.title}</a>)
                     })}
                 </div> 
                   

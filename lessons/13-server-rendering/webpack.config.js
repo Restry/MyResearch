@@ -9,6 +9,7 @@ module.exports = {
     publicPath: '/'
   },
 
+     devtool: 'source-map',
   plugins: process.env.NODE_ENV === 'production' ? [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
