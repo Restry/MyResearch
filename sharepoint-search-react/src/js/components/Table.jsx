@@ -31,7 +31,14 @@ class Table extends React.Component {
                     { "data": "BranchInformation" }
         ];
         this.state.settings.deferLoading=0;
-        this.state.settings.ajax.type="POST" 
+        this.state.settings.ajax.type="POST" ;
+        this.state.settings.columnDefs= [
+                    {
+                        "render": function (data, type, row) {
+                            return "<a onclick='_ctx._jumpTo('/detals/',"+data+")'>Detail</a>";
+                        },
+                        "targets": [1]
+                    }]
   }
 
 
@@ -46,6 +53,30 @@ class Table extends React.Component {
         table.ajax.url(url).load();
     }
 
+  
+
+  componentWillMount() {
+    // Clean up work here.
+  }
+
+  componentDidMount() {
+    //$(this.refs.placeholder).append($('<span />'));
+    window._ctx={
+        currentComponent:this,
+        _jumpTo:function(url,ctx){
+           alert( this.currentComponent.props.location);
+        }
+    }
+  }
+
+  shouldComponentUpdate() {
+    // Let's just never update this component again.
+    //return false;
+  }
+
+  componentWillUnmount(){
+    delete window._ctx;
+  }
 
   render() {
     
