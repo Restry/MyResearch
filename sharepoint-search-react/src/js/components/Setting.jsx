@@ -14,7 +14,7 @@ class Setting extends React.Component{
 
   render() { 
     return (
-      <form className="form-horizontal">
+      <form onSubmit={this.handleSubmit.bind(this)} className="form-horizontal">
         {this.props.currentSettings.map((sets)=>{
             return (
                     <div key={sets.key} className="form-group"> 
