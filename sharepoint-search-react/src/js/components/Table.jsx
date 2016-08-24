@@ -7,20 +7,8 @@ class Table extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-  }
-
-
-
-  render() {
-    let ajax={}
-    ajax.type = "POST"
-    ajax.url = boc.sops.util.createOperationAddress({
-        Action: "User",
-        Method: "GetAllUsers",
-        Branch: '00001'
-    });
-
-    let columns = [
+    this.state.settings = boc.sops.util.config;
+    this.state.settings.columns=[
                     {
                         "className": 'remove-user',
                         "orderable": false,
@@ -42,9 +30,25 @@ class Table extends React.Component {
                     { "data": "ProvinceName" },
                     { "data": "BranchInformation" }
         ];
+        this.state.settings.deferLoading=0;
+        this.state.settings.ajax.type="POST" 
+  }
 
 
+    binding(table){
+        this.setState({table:table});
+        //table.context[0].ajax.data=this.getFilterParams();
+        var url =boc.sops.util.createOperationAddress({
+                                            Action: "User",
+                                            Method: "GetAllUsers",
+                                            Branch: '00001'
+                                        });
+        table.ajax.url(url).load();
+    }
 
+
+  render() {
+    
     return (
         <div>
             <div className="col-xs-6 no-padding">
@@ -58,7 +62,7 @@ class Table extends React.Component {
                 </div>
             </div>
 
-            <Datatable ajax={ajax} columns={columns}>
+            <Datatable binding={this.binding.bind(this)} {...this.state.settings}>
                 <thead>
                     <tr>
                         <th></th>

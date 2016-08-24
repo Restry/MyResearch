@@ -26,17 +26,19 @@ var boc = (function (inner) {
                 "ajax": {
                     "url": ""
                 },
+                "deferLoading" : 0,
                 "bSort" : false,
                 "processing": true,
                 "serverSide": true,
                 "columns": [],
                 "columnDefs": [
-                    {
-                        "render": function (data, type, row) {
-                            return data ? '是' : '否';
-                        },
-                        "targets": [4, 5]
-                    }],
+                    // {
+                    //     "render": function (data, type, row) {
+                    //         return data ? '是' : '否';
+                    //     },
+                    //     "targets": [4, 5]
+                    // }
+                    ],
                 "order": [[5, 'esc']],
                 'language': {
                     'emptyTable': '没有数据',

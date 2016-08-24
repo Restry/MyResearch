@@ -1,7 +1,7 @@
 
 import 'datatables';
-import 'datatables/media/css/jquery.dataTables.css';
-import language from './locale';
+import './dt.style.css'; 
+import './bstyle';
 
 $.fn.dataTable.ext.errMode = function handleError(e, settings, techNote, message) {   
     console.error(arguments);
@@ -16,9 +16,10 @@ class Datatable extends React.Component {
 
   componentDidMount() {
     const options = Object.assign({
-      language: language,          // 国际化语言设置
-      ajax: this.props.ajax,
+ //     language: language,          // 国际化语言设置
+   //   ajax: this.props.ajax,
     }, this.props);
+    //options.ajax.data=this.props.postData;
     var table = $(this.getTableDomNode()).DataTable(options); // eslint-disable-line new-cap
     this.props.binding && this.props.binding(table);
   }
@@ -40,7 +41,7 @@ class Datatable extends React.Component {
     }
 
     return (
-      <table className="table table-striped table-bordered sops-table">
+      <table width="100%" className="table table-striped table-bordered sops-table">
         {this.props.children}
       </table>
     );
