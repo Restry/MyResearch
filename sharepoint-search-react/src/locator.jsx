@@ -14,8 +14,9 @@ import Setting from './js/components/Setting.jsx'
 import './extlibs/bootstrap/js/bootstrap.min.js'; 
 
 import withBasePath from './withBasePath'
-/*
-            <Route path="/settings/:flag" component={Setting}/> */
+
+
+
 ReactDOM.render(( 
   <Router history={withBasePath(hashHistory, '/boc/SitePages/Manage/')}> 
     <Route path="/" component={Index}>
