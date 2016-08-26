@@ -25,7 +25,7 @@ var Navigation = React.createClass({
             
                 <li><NavLink to="/" onlyActiveOnIndex>Home</NavLink></li> 
                 <li><NavLink to="/Holiday">Holiday</NavLink></li> 
-                <li><NavLink to="/Search">Search</NavLink></li> 
+                <li><NavLink to="/search">Search</NavLink></li> 
                 <li><NavLink to="/Table">Table</NavLink></li> 
                 <li><NavLink to="/Todo">Todo</NavLink></li> 
                 <li><NavLink to="/settings">Settings</NavLink></li> 

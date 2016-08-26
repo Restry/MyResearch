@@ -8,7 +8,7 @@ import searchLayoutReducer from './search-layout-reducer';
 
 // Combine Reducers
 var reducers = combineReducers({
-    searchReducer: searchReducer,
+    searchState: searchReducer,
     userState: userReducer,
     widgetState: widgetReducer,
     searchLayoutState: searchLayoutReducer

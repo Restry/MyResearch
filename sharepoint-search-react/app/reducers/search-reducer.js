@@ -10,16 +10,20 @@ const initialState = {
     searchQuery:'' 
 };
 
-const userReducer = function(state = initialState, action) {
+const searchReducer = function(state = initialState, action) {
 
   switch(action.type) {
 
     case types.SEARCH_SUCCESS:
-      return Object.assign({}, state, { users: action.users });
+        var data =action.data;
+        
+        data.pageCount = Math.ceil(data.itemCount / data.pageSize)
+        
+        return Object.assign({}, state, data);
   }
 
   return state;
 
 }
 
-export default userReducer;
+export default searchReducer;
