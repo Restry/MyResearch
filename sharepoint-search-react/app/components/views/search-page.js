@@ -2,7 +2,9 @@
 
 export default function(props) {
     var items = []; 
-    var count =(props.pageCount>10?10:props.pageCount);
+    
+    var pageCount = Math.ceil(props.itemCount / props.pageSize)
+    var count =(pageCount>10?10:pageCount);
     for (var index = 1; index <= count; index++) {
         items.push(<li className={props.pageIndex==index?"active":""} key={index}>
             <a onClick={props.switchPage} href="#">{index}</a>

@@ -25,7 +25,7 @@ const SearchPageContainer = React.createClass({
     render: function() { 
             return (<SearchPage previewsPage={this.previewsPage} 
             nextPage={this.nextPage} switchPage={this.switchPage}
-             {...this.props}/>)
+             {...this.props.pages}/>)
     }
 
 });
