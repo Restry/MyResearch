@@ -2,9 +2,15 @@
 
 搜索功能和工作日编辑功能
 
-![Screenshot application](assets/screenshot.png)
+![Screenshot application](assets/screenshot.jpg)
 
 This application has been built using [React](https://facebook.github.io/react/) and [Webpack](https://webpack.github.io) and demonstrates how you can implement the Flux architecture for unidirectional data flow in combination with leveraging SharePoint REST APIs. UX is implemented using [Office UI Fabric](http://dev.office.com/fabric).
+
+## Store Flow
+store=> router => layouts_container(布局状态) => layouts(布局) => cotainer(数据操作，获取) => api(数据接口调用) => reducers(控制状态) => view(展现) =>
+
+### UI flow
+main\_layouts => search\_layouts => user\_list\_container|search\_list\_container => SearchList(View)
 
 ## Prerequisites
 
