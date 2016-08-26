@@ -7,7 +7,7 @@ import q from 'q';
  * Search users
  */
 
-function searchdata(searchQuery, pageIndex=0) {
+function searchdata(searchQuery, pageIndex=1) {
     var defer = q.defer();
 
     var xhr = new XMLHttpRequest();
@@ -39,19 +39,18 @@ export function switchPage(searchQuery,pageIndex) {
     return search(searchQuery,pageIndex);
 }
 
-export function search(searchQuery, pageIndex=0) {
+export function search(searchQuery, pageIndex=1) {
     var data ={ 
         results: [],
-        itemCount: pageIndex-1,
-        pageIndex: 0,
-        pageSize: 20,
+        itemCount: 0,
+        pageIndex: pageIndex,
+        pageSize: 10,
         searchQuery:searchQuery,
         searching:true
     }
  
     searchdata(searchQuery, pageIndex-1).then(function(response) {
         
-
         if (typeof(response) === "string") {
             response = JSON.parse(response);
         }

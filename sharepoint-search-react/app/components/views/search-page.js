@@ -7,7 +7,7 @@ export default function(props) {
     var count =(pageCount>10?10:pageCount);
     for (var index = 1; index <= count; index++) {
         items.push(<li className={props.pageIndex==index?"active":""} key={index}>
-            <a onClick={props.switchPage} href="#">{index}</a>
+            <a onClick={props.switchPage} href="javascript:void(0);">{index}</a>
         </li>)
     }
 
@@ -16,13 +16,13 @@ export default function(props) {
             <nav aria-label="Page navigation">
                 <ul className="pagination">
                     <li>
-                        <a onClick={props.previewsPage} href="#" aria-label="Previous">
+                        <a onClick={props.previewsPage} href="javascript:void(0);" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li> 
                     {items}
                     <li>
-                        <a onClick={props.nextPage} href="#" aria-label="Next">
+                        <a onClick={props.nextPage} href="javascript:void(0);" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>

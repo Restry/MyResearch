@@ -6,21 +6,30 @@ import { loadSearchLayout } from '../../actions/search-layout-actions';
 const SearchPageContainer = React.createClass({
   
     previewsPage:function(){
-        if(this.props.pageIndex==1){
+        //event.preventDefault();
+
+        if(this.props.pages.pageIndex==1){
             alert("最小页");return;
         } 
-        searchApi.switchPage(this.props.searchQuery,this.props.pageIndex-1); 
+        searchApi.switchPage(this.props.pages.searchQuery,this.props.pages.pageIndex-1); 
+        
+        return false;
     },
     nextPage: function(){
-        if(this.props.pageIndex==this.props.pageCount){
+        //event.preventDefault();
+        
+        if(this.props.pages.pageIndex==this.props.pages.pageCount){
             alert("最大页");return;
         }
-        searchApi.switchPage(this.props.searchQuery,this.props.pageIndex+1); 
+        searchApi.switchPage(this.props.pages.searchQuery,this.props.pages.pageIndex+1); 
+        return false;
     },
     switchPage:function(obj){
-        //this.setState({pageIndex:obj.target.text})
-        searchApi.switchPage(this.props.searchQuery, obj.target.text); 
+        //event.preventDefault();
         
+        //this.setState({pageIndex:obj.target.text})
+        searchApi.switchPage(this.props.pages.searchQuery, obj.target.text);  
+        return false;
     },
     render: function() { 
             return (<SearchPage previewsPage={this.previewsPage} 

@@ -10,6 +10,8 @@ export const DELETE_WIDGET_SUCCESS = 'DELETE_WIDGET_SUCCESS';
 //Search
 export const SEARCH_SUCCESS = 'SEARCH_SUCCESS';
 
+//Settings
+export const GET_SETTINGS_SUCCESS = 'GET_SETTINGS_SUCCESS';
 
 // Search Layout
 export const LOAD_SEARCH_LAYOUT = 'LOAD_SEARCH_LAYOUT';

@@ -7,7 +7,7 @@ class Settings extends React.Component {
     constructor(props) {
         super(props);
         this.state={setList:[ {
-                                key: "reportSettings",
+                                key: "report",
                                 title:"数据统计参数", 
                                 keys:[
                                         {
@@ -48,8 +48,17 @@ class Settings extends React.Component {
                                 ]
                             },
                             {
-                                title:"节假日管理",
-                                url:"/Holiday"
+                                key:"holiday",
+                                title:"数据统计参数", 
+                                keys:[
+                                        {
+                                            key:"ClickCount",
+                                            value:100,
+                                            title: "点击量统计",
+                                            note:"默认值“100”次，允许修改",
+                                            description:"点击量超过设置的数值，将会在柜员端出现“高频”标识"
+                                        }
+                                        ]
                             }
 
                         ],

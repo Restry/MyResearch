@@ -1,6 +1,6 @@
 //import React from 'react';
 import * as userApi from '../../api/user-api';
-import * as widgetApi from '../../api/widget-api';
+//import * as widgetApi from '../../api/widget-api';
 import * as searchApi from '../../api/search-api';
 import { loadSearchLayout } from '../../actions/search-layout-actions';
 import SearchForm from '../views/search-form';

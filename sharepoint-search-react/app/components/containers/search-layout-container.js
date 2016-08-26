@@ -13,7 +13,7 @@ const mapStateToProps = function(store) {
   } else if (searchType === 'widgets') {
     totalResults = store.widgetState.widgets.length;
   } else if (searchType === 'search') {
-    totalResults = store.searchState.results.length;
+    totalResults = store.searchState.itemCount; 
     pages = {
        itemCount: store.searchState.itemCount,
        pageIndex: store.searchState.pageIndex,
