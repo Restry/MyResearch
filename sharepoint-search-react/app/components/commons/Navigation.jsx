@@ -18,11 +18,22 @@ var Navigation = React.createClass({
         }) 
   },
   render:function(){
+      var defaultNav = (
+            <ul>
+                <li><NavLink to="/" onlyActiveOnIndex>Home</NavLink></li> 
+                <li><NavLink to="/search">Search</NavLink></li> 
+                <li><NavLink to="/Holiday">节假日管理</NavLink></li> 
+                <li><NavLink to="/settings/report">数据统计参数</NavLink></li> 
+            </ul>
+      );
       if(this.state.loading){
           return (<div>
             正在加载导航...
+            
+                {defaultNav}
           </div>);
       }else{
+          
           return (  
             <ul className="sops-list sops-left-nav">
                 {this.state.items.map(item=>{
@@ -41,10 +52,7 @@ var Navigation = React.createClass({
                         </div> 
                     ); 
                 })}
-                <li><NavLink to="/" onlyActiveOnIndex>Home</NavLink></li> 
-                <li><NavLink to="/search">Search</NavLink></li> 
-                <li><NavLink to="/Holiday">节假日管理</NavLink></li> 
-                <li><NavLink to="/settings/report">数据统计参数</NavLink></li> 
+                {defaultNav}
             </ul>
             );
       }

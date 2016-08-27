@@ -15,10 +15,12 @@ const SettingsListContainer = React.createClass({
   },
     handleSubmit:function (obj) {  
         alert($(obj.target).serialize());
+        obj.preventDefault();
+        return false;
     },
   render: function() {
     return (
-      <Settingform handleSubmit={this.handleSubmit} settings={this.props.keys} />
+      <Settingform handleSubmit={this.handleSubmit} keys={this.props.keys} />
     );
   }
 

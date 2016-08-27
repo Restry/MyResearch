@@ -3,7 +3,7 @@
 export default function(props) {
   return (
       <form onSubmit={props.handleSubmit} className="form-horizontal">
-        {props.settings.map((sets)=>{
+        {props.keys.map((sets)=>{
             return (
                     <div key={sets.key} className="form-group"> 
                         <label htmlFor="" className="col-sm-10 col-sm-offset-2">{sets.description}</label>

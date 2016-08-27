@@ -25,10 +25,7 @@ export default (
           <Route path=":userId" component={UserProfileContainer} />
         </Route>
 
-        <Route path="settings">
-          <Route component={SettingsLayoutContainer}>
-            <IndexRoute component={SettingsListContainer} />
-          </Route>
+        <Route path="settings/:sets" component={SettingsListContainer}> 
         </Route>
 
         <Route path="search">
