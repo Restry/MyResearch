@@ -5,10 +5,10 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     'webpack-hot-middleware/client',
-    './client/reduxstagram'
+    './client/simple1',
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist1'),
     filename: 'bundle.js',
     publicPath: '/static/'
   },
