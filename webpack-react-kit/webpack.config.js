@@ -65,6 +65,7 @@ module.exports = {
     new webpack.ProvidePlugin({ //加载jq 
       $: 'jquery',
       jQuery: "jquery",
+      ko:"knockout",
       Raphael: "raphael"
     }),
     debug ? function() {} : new webpack.optimize.UglifyJsPlugin({ //压缩代码
