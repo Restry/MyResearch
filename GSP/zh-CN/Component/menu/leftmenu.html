@@ -1,0 +1,29 @@
+﻿<div id="main-menu">
+    <div id="main-menu-content">
+            <ul id="mainnav-menu" style="height:100%;" class="list-group" data-bind="foreach:{data:fmenu, as: 'fristMenu' }">
+                <li data-bind="click:menuFold">
+                    <a data-bind="click:navigation1.bind(fristMenu)">
+                        <i class="ion-wifi"></i>
+                        <span class="menu-title">
+                            <strong data-bind="text: fristMenu.value">测试</strong>
+                        </span>
+                        <i class="arrow"></i>
+                    </a>
+                    <!-- class="collapse" -->
+                    <ul data-bind="foreach:{data: childmenu, as: 'secMenu' }">
+                        <li>
+                            <a data-bind="click:navigation.bind(secMenu)">
+                                <span data-bind="text:secMenu.childvalue">子页面</span>
+                            </a>
+                        </li>
+
+                        <!--<li data-bind="if:checkPage">
+                        <a data-bind="click:navigation.bind(secMenu)">
+                            <span data-bind="text:secMenu.childvalue">子页面</span>
+                        </a>
+                    </li>-->
+                    </ul>
+                </li>
+            </ul>
+    </div>
+</div>

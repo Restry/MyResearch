@@ -1,0 +1,191 @@
+﻿<div class="form-horizontal">
+    <div class="row">
+        <label class="col-lg-1 control-label">类别：</label>
+        <div class="col-lg-11">
+            <div class="col-lg-3">
+                <label class="col-lg-4 control-label">机构<span class="asterisk">*</span></label>
+                <div class="col-lg-8">
+                    <div class="btn-group bootstrap-select show-tick" style="width: 100%;">
+                        <button type="button" class="btn dropdown-toggle btn-default" title="">
+                            <span class="filter-option-mechanism pull-left">--请选择--</span>&nbsp;
+                            <span class="filter-option-mechanism-id hidden"></span>&nbsp;
+                            <span class="bs-caret">
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <div class="dropdown-menu" style="max-height: 271px; overflow: hidden; min-height: 0px;">
+                            <ul class="inner pad-top" style="list-style:none;max-height: 271px; overflow-y: auto; min-height: 0px;">
+                                <li>
+                                    <div class="checkbox">
+                                        <input class="magic-checkbox" type="checkbox" name="chk_mechanism" value="1" data-title="全辖">
+                                        <label id="mechanism_SelectAll" class="checkbox">全辖</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-child-mechanism pad-top" style="list-style:none; max-height: 271px; min-height: 0px;">
+                                        <li class="pull-right pad-rgt">
+                                            <button class="btn btn-default chk-conmechanism">确定</button>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <label class="col-lg-4 control-label">币别<span class="asterisk">*</span></label>
+                <div class="col-lg-8 chartselect">
+                    <select class="form-control-select" data-bind="options: currencylist,optionsText: 'txt',value: selectedcurrency"></select>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <label class="col-lg-4 control-label">分产品</label>
+                <div class="col-lg-8">
+                    <div class="btn-group bootstrap-select show-tick" style="width: 100%;">
+                        <button type="button" class="btn dropdown-toggle btn-default" title="">
+                            <span class="filter-option1 pull-left">--请选择--</span>&nbsp;
+                            <span class="filter-option-id1 hidden"></span>&nbsp;
+                            <span class="bs-caret">
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <div class="dropdown-menu" style="max-height: 271px; overflow: hidden; min-height: 0px;">
+                            <ul class="inner pad-top" style="list-style:none;max-height: 271px; overflow-y: auto; min-height: 0px;">
+                                <li>
+                                    <div class="checkbox">
+                                        <input class="magic-checkbox" type="checkbox" name="chk_product" value="1" data-title="全部">
+                                        <label id="product_SelectAll" class="checkbox">全部</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-child1 pad-top" style="list-style:none; max-height: 271px; min-height: 0px;">
+                                        <li class="pull-right pad-rgt">
+                                            <button class="btn btn-default chk-confirm1">确定</button>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <label class="col-lg-4 control-label">分行业</label>
+                <div class="col-lg-8">
+                    <div class="btn-group bootstrap-select show-tick" style="width: 100%;">
+                        <button type="button" class="btn dropdown-toggle btn-default" title="">
+                            <span class="filter-option pull-left">--请选择--</span>&nbsp;
+                            <span class="filter-option-id hidden"></span>&nbsp;
+                            <span class="bs-caret">
+                                <span class="caret"></span>
+                            </span>
+                        </button>
+                        <div class="dropdown-menu" style="max-height: 271px; overflow: hidden; min-height: 0px;">
+                            <ul class="inner pad-top" style="list-style:none;max-height: 271px; overflow-y: auto; min-height: 0px;">
+                                <li>
+                                    <div class="checkbox">
+                                        <input class="magic-checkbox" type="checkbox" name="checkbox" value="1" data-title="全辖">
+                                        <label id="industry_SelectAll" class="checkbox">全部</label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <ul class="dropdown-menu-child pad-top" style="list-style:none; max-height: 271px; min-height: 0px;">
+                                        <li class="pull-right pad-rgt">
+                                            <button class="btn btn-default chk-confirm">确定</button>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-11">
+            <label class="col-lg-1 control-label">指标<span class="asterisk">*</span></label>
+            <div class="col-lg-11">
+                <div class="row">
+                    <label class="col-lg-1 control-label">时点</label>
+                    <div class="col-lg-11">
+                        <div class="radio">
+                            <input id="deposit-comparison-territory01" data-bind="checked:indicator" value="SDYE" class="magic-radio" type="radio" name="deposit-comparison-territory" checked>
+                            <label for="deposit-comparison-territory01">余额</label>
+
+                            <input id="deposit-comparison-territory02" data-bind="checked:indicator" value="SDSYXZ" class="magic-radio" type="radio" name="deposit-comparison-territory">
+                            <label for="deposit-comparison-territory02">较上月新增</label>
+
+                            <input id="deposit-comparison-territory03" data-bind="checked:indicator" value="SDSNXZ" class="magic-radio" type="radio" name="deposit-comparison-territory">
+                            <label for="deposit-comparison-territory03">较上年新增</label>
+
+                            <input id="deposit-comparison-territory04" data-bind="checked:indicator" value="SDDGXZ" class="magic-radio" type="radio" name="deposit-comparison-territory">
+                            <label for="deposit-comparison-territory04">四大行对公存款新增</label>
+
+                            <input id="deposit-comparison-territory05" data-bind="checked:indicator" value="SDSCFE" class="magic-radio" type="radio" name="deposit-comparison-territory">
+                            <label for="deposit-comparison-territory05">四大行对公存款市场份额</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-lg-1 control-label">日均</label>
+                    <div class="col-lg-11">
+                        <div class="radio">
+                            <input id="deposit-comparison-territory11" data-bind="checked:indicator" value="RJYE" class="magic-radio" type="radio" name="deposit-comparison-territory">
+                            <label for="deposit-comparison-territory11">余额</label>
+
+                            <input id="deposit-comparison-territory12" data-bind="checked:indicator" value="RJSYXZ" class="magic-radio" type="radio" name="deposit-comparison-territory">
+                            <label for="deposit-comparison-territory12">较上月新增</label>
+
+                            <input id="deposit-comparison-territory13" data-bind="checked:indicator" value="RJSNXZ" class="magic-radio" type="radio" name="deposit-comparison-territory">
+                            <label for="deposit-comparison-territory13">较上年新增</label>
+
+                            <input id="deposit-comparison-territory14" data-bind="checked:indicator" value="RJDGXZ" class="magic-radio" type="radio" name="deposit-comparison-territory">
+                            <label for="deposit-comparison-territory14">四大行对公存款新增</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-lg-1 control-label">付息率</label>
+                    <div class="col-lg-11">
+                        <div class="radio">
+                            <input id="deposit-comparison-territory21" data-bind="checked:indicator" value="FXL" class="magic-radio" type="radio" name="deposit-comparison-territory">
+                            <label for="deposit-comparison-territory21">付息率</label>
+
+                            <input id="deposit-comparison-territory22" data-bind="checked:indicator" value="FXLYBD" class="magic-radio" type="radio" name="deposit-comparison-territory">
+                            <label for="deposit-comparison-territory22">付息率较上月变动</label>
+
+                            <input id="deposit-comparison-territory23" data-bind="checked:indicator" value="FXLNBD" class="magic-radio" type="radio" name="deposit-comparison-territory">
+                            <label for="deposit-comparison-territory23">付息率较上年变动</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-11">
+            <label class="col-lg-1 control-label">数据日期<span class="asterisk">*</span></label>
+            <div class="col-lg-11 chartselect">
+                <select id="indatacontrastselectyear" data-bind="options:indatayearlist,value:indataselectedyear" class="form-control-select" style="width:100px"></select>
+                <select id="indatacontrastselectmonth" data-bind="options:indatamonthlist,value:indataselectedmonth" class="form-control-select" style="width:80px"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-11">
+            <label class="col-lg-1 control-label"></label>
+            <div class="col-lg-11">
+                <button class="btn btn-danger btn-normal" data-bind="click:indatasearchaction">查看报表</button>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="dottedline"></div>
+    </div>
+</div>
+</div>
