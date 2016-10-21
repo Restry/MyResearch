@@ -1,0 +1,41 @@
+﻿<div class="divcenter">
+    <span data-bind="text:title"></span>
+    <div class="row">
+        <!-- ko foreach:{data: charts, as: 'chart'} -->
+        <!-- ko if:chart.code==1 -->
+        <!-- ko if:chart.tabledata.length<=12 -->
+        <div class="col-lg-6">
+            <div class="divinleft">
+                <div class="row chartrow" data-bind="component:{name:'chart',params:{chart:chart,action:$component.action}}"></div>
+            </div>
+        </div>
+        <!-- /ko -->
+        <!-- ko if:chart.tabledata.length>12 -->
+        <div class="col-lg-12">
+            <div class="divinleft">
+                <div class="row chartrow" data-bind="component:{name:'chart',params:{chart:chart,action:$component.action}}"></div>
+            </div>
+        </div>
+        <!-- /ko -->
+        <!-- /ko -->
+        <!-- ko if:chart.code==2 -->
+        <div class="col-lg-12">
+            <div class="col-lg-6">
+                <div class="divinleft">
+                    <div class="row chartrow" data-bind="component:{name:'chart',params:{chart:chart,action:$component.action}}"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+        <!-- ko if:chart.code==3 -->
+        <div class="col-lg-12">
+            <div class="divinleft">
+                <div class="row chartrow" data-bind="component:{name:'chart',params:{chart:chart,action:$component.action}}"></div>
+            </div>
+        </div>
+        <!-- /ko -->
+        <!-- /ko -->
+
+
+    </div>
+</div>

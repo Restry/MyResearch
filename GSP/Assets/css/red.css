@@ -1,0 +1,421 @@
+﻿
+.panel-primary .panel-heading,
+.panel-primary .panel-footer,
+.panel-primary.panel-colorful {
+    background-color: #fff;
+    border-color: #fff;
+    color: #000000;
+}
+
+body,
+#content-container {
+    font-size: 14PX;
+    font-weight: 200;
+    color: #000 !important;
+}
+
+#right-container {
+    background-color: #ecf0f5;
+}
+
+#right-content {
+    background-color: #fff;
+}
+
+/*首页*/
+.concise, .models {
+    background-color: #ddd;
+    border-color: #ddd;
+    opacity: .6;
+}
+
+    .concise a:hover,
+    .models a:hover {
+        color: #fff;
+        background-color: #EB2A26;
+    }
+
+.navbar-header:before,
+.navbar-content:before {
+    background-color: #fff;
+}
+
+.effect #navbar {
+    background-color: #fff;
+}
+
+.user-contract a {
+    background-color: #fff;
+}
+
+
+.icon-remind {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+
+.icon-status {
+    background-color: #2cd71e;
+}
+
+
+/*头部*/
+
+/*以后要注释*/
+.cassette .panel-title {
+    font-size: 26px;
+    color: #EB2A26;
+}
+
+#gsp-work h3.panel-title {
+    font-size: 26px;
+    color: #EB2A26;
+}
+
+.work-title a {
+    color: #a19c9c;
+}
+
+.work-title-bold a {
+    color: #000;
+    font-weight: 700;
+}
+
+    .work-title-bold a:hover {
+        color: #a19c9c;
+    }
+
+.schedule:hover,
+.task-process a:hover {
+    background-color: #EAA4A4;
+}
+
+.work-more a,
+.customer-group-all,
+.pro-all-link {
+    text-decoration: underline;
+    color: #a19c9c !important;
+}
+
+    .work-more a:hover,
+    .customer-group-all:hover,
+    .pro-all-link:hover {
+        text-decoration: none;
+    }
+
+#customer-data .panel-control li:not(.active) {
+    opacity: 1 !important;
+}
+
+#customer-data .panel-control li.active a {
+    color: #fff;
+    background-color: #EB2A26;
+    border-color: #EB2A26;
+}
+
+#customer-data .panel-control li:not(.active) a {
+    color: #fff;
+    background-color: #EAA4A4 !important;
+    border-color: #EAA4A4;
+}
+
+    #customer-data .panel-control li:not(.active) a:hover {
+        color: #fff;
+        background-color: #EB2A26 !important;
+    }
+
+button {
+    color: #fff !important;
+    background-color: #ef6262 !important;
+    border-color: #EAA4A4 !important;
+}
+
+    button:hover {
+        color: #fff;
+        background-color: #EB2A26 !important;
+        border-color: #EB2A26 !important;
+    }
+
+.close {
+    color: #000 !important;
+}
+
+.form-control:focus {
+    border-color: #EB2A26;
+    opacity: .8;
+}
+
+.nucleus-content ul li a,
+.across-content ul li a,
+.information-content ul li a,
+#index-models ul li a {
+    background-color: #EB2A26;
+    color: #fff;
+    opacity: .6;
+}
+
+    .nucleus-content ul li a:hover,
+    .across-content ul li a:hover,
+    .information-content ul li a:hover,
+    #index-models ul li a:hover {
+        background-color: #EB2A26;
+        color: #fff;
+        opacity: 1;
+    }
+
+.datepicker table thead {
+    background-color: #EB2A26 !important;
+    color: #fff !important;
+}
+
+.datepicker table tr td.today,
+.datepicker table tr td.today:hover,
+.datepicker table tr td.today.disabled,
+.datepicker table tr td.today.disabled:hover {
+    color: #fff !important;
+    background-color: #EB2A26 !important;
+    border-color: #EB2A26 !important;
+    opacity: .3;
+}
+
+.datepicker-days table tr td:hover,
+.datepicker-days table tr td.disabled:hover {
+    color: #fff !important;
+    background-color: #EB2A26 !important;
+    border-color: #EB2A26 !important;
+}
+
+.datepicker-months table tr span:hover,
+.datepicker-years table tr span:hover,
+.datepicker-decades table tr span:hover,
+.datepicker-centuries table tr span:hover {
+    color: #fff !important;
+    background-color: #EB2A26 !important;
+    border-color: #EB2A26 !important;
+}
+
+
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active:hover:hover,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.active:focus,
+.datepicker table tr td.active:hover:focus,
+.datepicker table tr td.active.disabled:focus,
+.datepicker table tr td.active.disabled:hover:focus,
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.active,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled:hover.active,
+.open .dropdown-toggle.datepicker table tr td.active,
+.open .dropdown-toggle.datepicker table tr td.active:hover,
+.open .dropdown-toggle.datepicker table tr td.active.disabled,
+.open .dropdown-toggle.datepicker table tr td.active.disabled:hover {
+    color: #ffffff;
+    background-color: #EB2A26 !important;
+    border-color: #EB2A26 !important;
+    opacity: 1;
+}
+
+.datepicker table tr td span.active:hover, .datepicker table tr td span.active:hover:hover, .datepicker table tr td span.active.disabled:hover, .datepicker table tr td span.active.disabled:hover:hover, .datepicker table tr td span.active:focus, .datepicker table tr td span.active:hover:focus, .datepicker table tr td span.active.disabled:focus, .datepicker table tr td span.active.disabled:hover:focus, .datepicker table tr td span.active:active, .datepicker table tr td span.active:hover:active, .datepicker table tr td span.active.disabled:active, .datepicker table tr td span.active.disabled:hover:active, .datepicker table tr td span.active.active, .datepicker table tr td span.active:hover.active, .datepicker table tr td span.active.disabled.active, .datepicker table tr td span.active.disabled:hover.active, .open .dropdown-toggle.datepicker table tr td span.active, .open .dropdown-toggle.datepicker table tr td span.active:hover, .open .dropdown-toggle.datepicker table tr td span.active.disabled, .open .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
+    color: #ffffff;
+    background-color: #EB2A26 !important;
+    border-color: #EB2A26 !important;
+}
+
+    .datepicker table tr td span.active:hover,
+    .datepicker table tr td span.active:hover:hover,
+    .datepicker table tr td span.active.disabled:hover,
+    .datepicker table tr td span.active.disabled:hover:hover,
+    .datepicker table tr td span.active:focus,
+    .datepicker table tr td span.active:hover:focus,
+    .datepicker table tr td span.active.disabled:focus,
+    .datepicker table tr td span.active.disabled:hover:focus,
+    .datepicker table tr td span.active:active,
+    .datepicker table tr td span.active:hover:active,
+    .datepicker table tr td span.active.disabled:active,
+    .datepicker table tr td span.active.disabled:hover:active,
+    .datepicker table tr td span.active.active,
+    .datepicker table tr td span.active:hover.active,
+    .datepicker table tr td span.active.disabled.active,
+    .datepicker table tr td span.active.disabled:hover.active,
+    .open .dropdown-toggle.datepicker table tr td span.active,
+    .open .dropdown-toggle.datepicker table tr td span.active:hover,
+    .open .dropdown-toggle.datepicker table tr td span.active.disabled,
+    .open .dropdown-toggle.datepicker table tr td span.active.disabled:hover {
+        color: #ffffff;
+        background-color: #EB2A26;
+        border-color: #EB2A26;
+        opacity: 1;
+    }
+
+.datepicker table tr td span.active, .datepicker table tr td span.active:hover, .datepicker table tr td span.active.disabled, .datepicker table tr td span.active.disabled:hover {
+    color: #ffffff;
+    background-color: #EB2A26;
+    border-color: #EB2A26;
+    opacity: 1;
+}
+
+table.table-condensed tbody {
+    background-color: #fff;
+}
+
+
+.datepicker-remind-circle {
+    background-color: #000;
+}
+
+#group-customer-link a,
+#alone-customer-link a {
+    background-color: #ffffff;
+}
+
+    #group-customer-link a:hover,
+    #alone-customer-link a:hover {
+        color: #fff;
+        background-color: #EB2A26;
+        opacity: .6;
+    }
+
+#customer-link .panel,
+#customer-core-link .panel {
+    background-color: transparent;
+}
+
+.wait-do-tabs li a,
+.work-read-tabs li a,
+.work-warring-tabs li a {
+    color: #fff;
+    background-color: #EB2A26;
+    opacity: .6;
+}
+
+.wait-do-tabs li.active a,
+.work-read-tabs li.active a,
+.work-warring-tabs li.active a {
+    color: #fff;
+    background-color: #EB2A26;
+    opacity: 1;
+}
+
+.wait-do-tabs li a:hover,
+.work-read-tabs li a:hover,
+.work-warring-tabs li a:hover {
+    color: #fff;
+    background-color: #EB2A26;
+    opacity: 1;
+}
+
+@keyframes hover-color1 {
+    from {
+        border-color: #e0e0e0;
+    }
+
+    to {
+        border-color: #f00;
+    }
+}
+
+.magic-radio:checked + label:before {
+    border-color: #EB2A26 !important;
+}
+
+.magic-radio + label:after {
+    background-color: #EB2A26 !important;
+}
+
+.magic-checkbox:checked + label:before {
+    border-color: #EB2A26 !important;
+    background-color: #EB2A26 !important;
+}
+
+.magic-radio + label:hover:before,
+.magic-checkbox + label:hover:before {
+    animation-duration: 0.4s;
+    animation-fill-mode: both;
+    animation-name: hover-color1 !important;
+}
+
+
+table > tbody > td > a {
+    color: #000;
+}
+
+    table > tbody > td > a:hover {
+        color: #ff6633;
+    }
+
+.schedule {
+    border: 1px #ddd solid !important;
+}
+
+.user-contract a {
+    border: 1px #ddd solid;
+}
+
+#customer-group-data ul li:hover {
+    background-color: #ddd;
+}
+
+.advisory li a {
+    border: 1px solid #ddd;
+    color: #000;
+}
+
+.major {
+    color: #000000;
+}
+
+.no-major {
+    color: #b9b4b4;
+}
+
+
+.panel-control .nav-tabs > li:not(.active) a {
+    color: #fff;
+    /*background-color: #EB2A26;*/
+    /*opacity: .6;*/
+}
+
+    .panel-control .nav-tabs > li:not(.active) a:hover {
+        color: #fff;
+        background-color: #EB2A26;
+        opacity: 1;
+    }
+
+/*2016-09-22*/
+#gsp-header-title,
+#gsp-header-work,
+#gsp-header-userinfo {
+    background-color: #fff;
+}
+
+#gsp-footer {
+    background-color: #ddd;
+}
+
+#main-menu-content,
+#main-menu-content-sm {
+    background-color: #fff;
+}
+
+#main-menu-content a,
+#main-menu-content-sm a {
+    color:#000;
+}
+
+#mainnav-menu>.active {
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    background-color: #EAA4A4;
+}
+
+#main-menu-content a:hover {
+    color:#fff;
+    background-color:#EB2A26;
+}

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+	<meta charset="utf-8" />
+    <link href="/Assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="/Assets/css/nifty.css" rel="stylesheet" />
+    <link href="/Assets/css/common.css" rel="stylesheet" />
+    <link href="/Assets/css/iconfont.css" rel="stylesheet" />
+    <link href="/Assets/css/red.css" rel="stylesheet" />
+    
+    
+    
+    
+    <script type="text/javascript" src="/Assets/Scripts/jquery-2.2.4.js"></script>
+    <script type="text/javascript" src="/Assets/Scripts/js.cookie.js"></script>
+    <script type="text/javascript" src="/Assets/Scripts/knockout-3.4.0.debug.js"></script>
+    <script type="text/javascript" src="/Assets/Scripts/common/common.js" checklogon="false"></script>
+    <script type="text/javascript" src="/Assets/Scripts/common/userinfo.js" checklogon="false"></script>
+    <script type="text/javascript">
+        var ww = { 'w': "1", 'xx': '1' };
+        function test()
+        {
+            var a = _UserInfo();
+
+        }
+    </script>
+    
+</head>
+<body>
+    <div id="gsp">
+        <div id="page_header" data-bind="component:{name:'page_header',params:ww}"></div>
+        <!--<div id="gsp_pagemenu" data-bind="component:{name:'gsp-menu',params:leftmenu}"></div>-->
+    </div>
+    <button onclick="test()">fffffffffffffffffffff</button>
+    <script type="text/javascript" src="/Assets/Scripts/require.js" data-main="./index"></script> 
+</body>
+</html>

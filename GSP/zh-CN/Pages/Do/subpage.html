@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title> 
+    <meta http-equiv="X-UA-Compatible" content="IE=9">
+    <meta http-equiv="Cache-Control" content="max-age=7200" />
+    <meta http-equiv="Expires" content="Mon, 20 Jul 2009 23:00:00 GMT" />
+
+    <script type="text/javascript" src="../../../Assets/Scripts/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="../../../Assets/Scripts/handlebars.js"></script>
+    <script type="text/javascript" src="../../../Assets/Scripts/handlebars-layouts.js"></script> 
+    <script type="text/javascript" src="../../../Assets/Scripts/common/menu.js"></script> 
+</head>
+<body>
+    <script type="text/javascript">
+
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+
+        var t_menucode = getQueryString("menucode");
+        var t_menuitem = _MenuInfo.menulist[t_menucode];
+        var handlebars = Handlebars;
+        var layouts = handlebarsLayouts
+
+        // Register helpers
+        handlebars.registerHelper(layouts(handlebars));
+
+        $.getScript('subpage_layouts.hbs').done(function (res) {
+            // Register partials
+            handlebars.registerPartial('layout', res);
+
+            $.getScript(t_menuitem.url).done(function (res) {
+                // Compile template
+                var template = handlebars.compile(res);
+
+                // Render template
+                var output = template({
+                    title: t_menuitem.title
+                });
+
+                document.write(output);
+
+            });
+        })
+
+
+    </script>
+</body>
+</html>
