@@ -1,4 +1,4 @@
-﻿/// <reference path="menu.js" />
+/// <reference path="menu.js" />
 /// <reference path="common.js" />
 /// <reference path="globalsetting.js" />
 /// <reference path="../js.storage.js" />
@@ -7,8 +7,11 @@
 var _UserInfo = {};
 
 _UserInfo.updateonline = function () {
-    var user = _CommunicationHelper.get(gspsetting.api_baseurl + "api/UserInfo");
-
+    var user = _CommunicationHelper.get(gspsetting.api_baseurl + "api/UserInfo/sunzq");
+    if (user.state == "error")
+    {
+        throw _Exception.throw(user.data);
+    }
     Storages.localStorage.set("userinfo", user.data);
 }
 
@@ -117,12 +120,7 @@ function homemenucode(rolecode) {
         if (!_UserInfo.getusercookie())
             window.location.href = _MenuInfo.GenerateUrl("98");
     }
-
-
-    //window.onerror = function (errorMessage, scriptURI, lineNumber) {
-    //    var s = JSON.stringify(arguments);
-    //    alert(s);
-    //}
+     
 }())
 
 

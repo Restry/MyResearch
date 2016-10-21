@@ -1,4 +1,4 @@
-define(['knockout', 'text!./investment-page.html'], function (ko, templateMarkup) {
+define(['knockout', 'text!./investment-page.html',"toastr"], function (ko, templateMarkup,toastr) {
 
     function InvestmentPage(route) {
         var self = this;
@@ -34,7 +34,7 @@ define(['knockout', 'text!./investment-page.html'], function (ko, templateMarkup
     // for example cancelling setTimeouts or disposing Knockout subscriptions/computeds.
     InvestmentPage.prototype.dispose = function() { 
 
-            alert('Disposing InvestmentPage components');
+            toastr.info('Disposing InvestmentPage components');
 
     };
   

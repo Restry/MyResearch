@@ -30,14 +30,14 @@
                     <h4 class="modal-title" id="myLargeModalLabel">请选择以哪种身份访问球台系统</h4>
                 </div>
                 <div class="modal-body news-content">
-                    USER ID:<span data-bind="text:userinfo.userid"></span>
+                    USER Logon Name:<span data-bind="text:userinfo.userid"></span>
 
                     <div class="row" data-bind="foreach:{data:userinfo.roles,as:'sr'}">
                         <p>
-                            <span data-bind="text:sr.institution"></span>
-                            <span data-bind="text:sr.department"></span>
-                            <span data-bind="text:sr.team"></span>
-                            <span data-bind="text:sr.role"></span>
+                            <span data-bind="text:sr.BranchName"></span>
+                            <span data-bind="text:sr.OwnerDName"></span>
+                            <span data-bind="text:sr.OuName"></span>
+                            <span data-bind="text:sr.RoleName"></span>
                             【<a href="#" data-bind="click:$parent.fSelect">进入</a>】
                         </p>
                     </div>

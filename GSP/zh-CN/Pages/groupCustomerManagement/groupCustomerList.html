@@ -1,4 +1,4 @@
-﻿{{#extend "layout"}}
+{{#extend "layout"}}
 
 {{#content "maincontent"}}
                     <div id="page-content">
@@ -29,7 +29,7 @@
                                             </div>
                                             <h3 class="panel-title">集团客户列表</h3>
                                         </div>
-
+                                        
                                         <!--全部-->
                                         <div class="panel-body">
                                             <div class="tab-content">
@@ -593,183 +593,11 @@
         </div>
     </div>
 
-    <!--新建集团的js-->
-    <script>
-
-        //弹出表单
-        $("#btn_OpenFrom").click(function () {
-            modal2();
-            $("#submit").click(function () {
-                var str = $("#open-form").serializeObject();   //调用表单序列化方法
-                alert(JSON.stringify(str))
-            })
-        });
-        //显示窗体
-        function modal2() {
-            $("#myNewModal").modal({
-                "backdrop": "static",
-                "keyboard": true,
-                "show": true
-            });
-        }
-    </script>
-
-    <!--操作分层达标的js-->
-    <script>
-        //
-        //将表单转成json格式
-        $("#btnDaok").click(function () {
-            var str = {};
-            str = $("#formID").serializeObject();   //调用表单序列化方法
-            alert(typeof str);
-            alert(JSON.stringify(str));
-            alert(typeof JSON.stringify(str))
-        });
-        //显示窗体
-        function modal() {
-            $("#myDaModal").modal({
-                "backdrop": "static",
-                "keyboard": true,
-                "show": true
-            });
-
-        }
-        //弹出表单
-        $("#btn-Open-Da").click(function () {
-            var arr = [];
-            var companyArrs = [];
-            var a = 0;
-            var strset = $("#datableApp tbody tr input[type=checkbox]");
-            $(strset).each(function () {
-                if ($(this).is(":checked")) {
-                    a++;
-                    strid = $(this).closest(".rowid").prop("id");//获取选中行的id
-                    arr.push(strid);
-                    var str = $(this).val() + " " + $(this).attr("number");
-                    companyArrs.push(str);
-                }
-            });
-            if (a <= 0) {
-                alert("至少选择一条数据创建分层打标!");
-            } else {
-                modal();
-                //循环数据创建元素添加到div
-                //先情况之前的数据
-                $('#show-data span').remove();
-                $('#show-data br').remove();
-                $.each(companyArrs, function () {
-                    var doc = this;
-                    var tem = "<span>" + doc + "</span><br /><br />";
-                    $(tem).appendTo(".insert-data");
-                })
-                //保存按钮
-                $("#submit-da").click(function () {
-                    //把集团编号和选择的type传递到后台修改
-                    var strset = $("input[type=radio]");
-                    var value = $('input[name="type"]:checked').val()
-                    alert(value);
-                    alert(arr);
-                });
-                //关闭按钮，关闭后刷新下把数据清掉
-                $("#close-da").bind("click", function () {
-                    window.location.reload();
-                });
-
-            }
-        });
-    </script>
-    <!--删除操作-->
-    <script>
-        //全选
-        $(".thead-box").click(function () {
-            var _checked = $(this).is(":checked");
-            $(".table input[type='checkbox']").prop("checked", _checked)
-        });
-
-
-        //删除
-        $("#datableApp").on("click", ".delete", function () {
-            var rowId = $(this).closest("tr").find("td").children(".rowid").prop("id");//获取当前行的id
-            $.ajax({
-                url: "" + rowId,
-                type: "GET",
-                success: function (strData) {
-                    alert("删除成功！");
-                }, error: function (strData) {
-                    alert(error);
-                }
-            })
-            $(this).closest("tr").remove();
-            // window.location.reload();
-        });
-
-        //批量删除
-        var arr = [];
-        var a = 0;
-        $("body").on("click", "#table_remove", function () {
-            var strset = $("#datableApp tbody tr input[type=checkbox]");
-            $(strset).each(function () {
-                if ($(this).is(":checked")) {
-                    a++;
-                    strid = $(this).closest(".rowid").prop("id");//获取选中行的id
-                    arr.push(strid);
-                }
-            });
-            if (a <= 0) {
-                alert("至少选择一条数据删除!");
-            } else {
-                alert(arr);
-                //向数据库删除
-                $.ajax({
-                    url: "" + arr,
-                    type: "GET",
-                    success: function (strData) {
-                        alert("操作成功");
-                    }, error: function (sttData) {                        alert(error);
-                    }
-                })
-            }
-        });
-
-
-    </script>
-    <!--操作指定总行团队-->
-    <script>
-        //弹出表单
-        $("#btn_account_team").click(function () {
-            modal3();
-
-        });
-        function modal3() {
-            $("#DaModal2").modal({
-                "backdrop": "static",
-                "keyboard": true,
-                "show": true
-            });
-        }
-
-    </script>
-    <!--弹出导出-->
-    <script>
-        //弹出表单
-        $("#export-excel").click(function () {
-            modal4();
-
-        });
-        function modal4() {
-            $("#exportDaModal").modal({
-                "backdrop": "static",
-                "keyboard": true,
-                "show": true
-            });
-        }
-
-
-    </script>
+    
 
 
 
-<script type="text/javascript" src="../../../Assets/Scripts/require.js" data-main="../groupCustomerManagement/groupCustomerList.js" "></script>
+<script type="text/javascript" src="../../../Assets/Scripts/require.js" data-main="../groupCustomerManagement/groupCustomerList.js" ></script>
 
 {{/content}}
 

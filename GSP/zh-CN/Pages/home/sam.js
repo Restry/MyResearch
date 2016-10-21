@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 var baseUrl = '../../';
 
 requirejs.config({
@@ -58,7 +58,7 @@ define(function () {
                 { code: '111', name: '湖南' }
             ]
         }
-
+         
         _self.btntest = function () {
 
             var ids = _self.selVlaue.id;

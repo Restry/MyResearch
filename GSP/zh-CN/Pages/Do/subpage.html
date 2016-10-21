@@ -1,15 +1,16 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title> 
+    <title></title>
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=9">
-    <meta http-equiv="Cache-Control" content="max-age=7200" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Expires" content="Mon, 20 Jul 2009 23:00:00 GMT" />
 
     <script type="text/javascript" src="../../../Assets/Scripts/jquery-3.1.1.js"></script>
     <script type="text/javascript" src="../../../Assets/Scripts/handlebars.js"></script>
-    <script type="text/javascript" src="../../../Assets/Scripts/handlebars-layouts.js"></script> 
-    <script type="text/javascript" src="../../../Assets/Scripts/common/menu.js"></script> 
+    <script type="text/javascript" src="../../../Assets/Scripts/handlebars-layouts.js"></script>
+    <script type="text/javascript" src="../../../Assets/Scripts/common/menu.js"></script>
 </head>
 <body>
     <script type="text/javascript">
@@ -27,13 +28,18 @@
 
         // Register helpers
         handlebars.registerHelper(layouts(handlebars));
-
-        $.getScript('subpage_layouts.hbs').done(function (res) {
+        $.ajax({
+            contentType: "text/x-handlebars-template; charset=utf-8",
+            url: "subpage_layouts.hbs"
+        }).done(function (res) {
             // Register partials
             handlebars.registerPartial('layout', res);
 
-            $.getScript(t_menuitem.url).done(function (res) {
-                // Compile template
+            $.ajax({
+                contentType: "text/html; charset=utf-8",
+                url: t_menuitem.url
+            }).done(function (res) {
+
                 var template = handlebars.compile(res);
 
                 // Render template
@@ -42,9 +48,8 @@
                 });
 
                 document.write(output);
-
             });
-        })
+        });
 
 
     </script>

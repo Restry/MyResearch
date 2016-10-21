@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 var baseUrl = '../../';
 
 requirejs.config({
@@ -20,6 +20,8 @@ ko.components.register('schedule', { require: 'Component/page/home/schedule' });
 
 ko.components.register('area-data1', { require: 'Component/page/home/customer-group-table' });
 ko.components.register('area-data2', { require: 'Component/page/home/customer-group-table' });
+ko.components.register('team-data1', { require: 'Component/page/home/customer-group-table' });
+ko.components.register('team-data2', { require: 'Component/page/home/customer-group-table' });
 //核心数据
 ko.components.register('core', { require: 'Component/page/home/manager-data' });
 
@@ -35,6 +37,8 @@ define(function () {
         _self.schedule = ko.observableArray();
         _self.area1 = ko.observableArray();
         _self.area2 = ko.observableArray();
+        _self.team1 = ko.observableArray();
+        _self.team2 = ko.observableArray();
         _self.userinfo = _UserInfo.local();
         _self.menu = _MenuInfo;
 
@@ -44,26 +48,31 @@ define(function () {
             scheduledata: res.data.schedule
         });
 
-        //var model = {};
-        //$.ajax({ 
-        //    url: gspsetting.api_baseurl + "api/BackLog",
-        //    cache: false,
-        //    type: "GET",
-        //    async: false,
-        //    success: function (res) {
-        //        _self.schedule({
-        //            schedule_title: '查看历史待办',
-        //            scheduledata: res.schedule
-        //        });
-        //    },
-        //    error: function (res) {
-        //        alert(JSON.stringify(res));
-        //    }
-        //});
-
         //切换tabs时，加载数据
         _self.areaClick = function () {
-            _self.area1([{ 'world': '9', 'headoffice': '9', 'branch': '9', 'commonly': '9' }]);
+            var data = [
+                { 'title': '江苏省分行', 'world': '9', 'headoffice': '9', 'branch': '9', 'commonly': '9' },
+                { 'title': '河南省分行', 'world': '9', 'headoffice': '9', 'branch': '9', 'commonly': '9' },
+                { 'title': '河北省分行', 'world': '9', 'headoffice': '9', 'branch': '9', 'commonly': '9' },
+                { 'title': '山东省分行', 'world': '9', 'headoffice': '9', 'branch': '9', 'commonly': '9' },
+                { 'title': '山西省分行', 'world': '9', 'headoffice': '9', 'branch': '9', 'commonly': '9' },
+                { 'title': '湖南省分行', 'world': '9', 'headoffice': '9', 'branch': '9', 'commonly': '9' },
+            ]
+            _self.area1(data);
+            _self.area2(data);
+        }
+
+        _self.teamClick =function() {
+            var data = [
+                { 'title': '1团队', 'world': '9', 'headoffice': '9', 'branch': '9', 'commonly': '9' },
+                { 'title': '1团队', 'world': '9', 'headoffice': '9', 'branch': '9', 'commonly': '9' },
+                { 'title': '1团队', 'world': '9', 'headoffice': '9', 'branch': '9', 'commonly': '9' },
+                { 'title': '1团队', 'world': '9', 'headoffice': '9', 'branch': '9', 'commonly': '9' },
+                { 'title': '1团队', 'world': '9', 'headoffice': '9', 'branch': '9', 'commonly': '9' },
+                { 'title': '1团队', 'world': '9', 'headoffice': '9', 'branch': '9', 'commonly': '9' },
+            ]
+            _self.team1(data);
+            _self.team2(data);
         }
 
         //所有待办日期

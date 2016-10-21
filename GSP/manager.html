@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GSP SPA - [Manager Page]</title> 
+      <link href="/css/bootstrap.css" rel="stylesheet"> 
+      <link href="/css/styles.css" rel="stylesheet"> 
+
+ 
+    <link href="/Assets/css/nifty.css" rel="stylesheet" />
+    <link href="/Assets/css/common.css" rel="stylesheet" />
+    <link href="/Assets/css/iconfont.css" rel="stylesheet" />
+    <link href="/Assets/css/red.css" rel="stylesheet" />
+
+      <link href="/Assets/css/toastr.min.css" rel="stylesheet">  
+      <script src="/Assets/scripts/toastr.min.js"></script>
+
+      <script src="/entry/require.config.js"></script>
+      <script data-main="/entry/startup.js" src="/modules/require.js"></script> 
+  </head>
+  <body>
+    <nav-bar params="route: route"></nav-bar> 
+    <div id="page" data-bind="component: { name: route().page, params: route }"></div>
+  </body>
+</html>

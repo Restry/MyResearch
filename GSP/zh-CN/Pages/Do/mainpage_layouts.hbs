@@ -6,7 +6,7 @@
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=9">
-    <meta http-equiv="Cache-Control" content="max-age=7200" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Expires" content="Mon, 20 Jul 2009 23:00:00 GMT" />
 
     <link href="../../../Assets/css/bootstrap.css" rel="stylesheet" />
@@ -32,11 +32,21 @@
 
     <script type="text/javascript" src="../../../Assets/Scripts/common/userinfo.js" checklogon="true"></script>
 
+
+    <link href="../../../Assets/css/nprogress.css" rel="stylesheet" />
+    <link href="../../../Assets/css/toastr.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../Assets/Scripts/toastr.min.js" checklogon="true"></script>
+    <script type="text/javascript" src="../../../Assets/Scripts/nprogress.js" checklogon="true"></script>
+
+    <script type="text/javascript" src="../../../Assets/Scripts/gsp.lib.js" checklogon="true"></script>
+    <script type="text/javascript" src="../../../Assets/Scripts/gsp.lib.user.js" checklogon="true"></script>
+
+
     {{/block}}
 </head>
 <body>
 
-    <div id="gsp">
+    <div id="gsp_container">
         <div id="gsp-header" data-bind="component:{name:'page_header'}"></div>
 
         <div id="gsp-boxed-sm">
@@ -52,6 +62,7 @@
         <div id="gsp-footer" data-bind="component:{name:'page_footer'}"></div>
     </div>
     {{#block "foot"}}
+   
     {{/block}}
 
 </body>

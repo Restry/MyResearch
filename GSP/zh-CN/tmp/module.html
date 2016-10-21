@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+
+
+
+    <link href="../../Assets/css/bootstrap.min.css" rel="stylesheet" /> 
+    <script type="text/javascript" src="../../Assets/Scripts/jquery-2.2.4.js"></script>
+    <script type="text/javascript" src="../../Assets/Scripts/knockout-3.4.0.debug.js"></script>
+
+
+    <link href="../../Assets/css/nprogress.css" rel="stylesheet" />
+    <link href="../../Assets/css/toastr.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../Assets/Scripts/toastr.min.js" checklogon="true"></script>
+    <script type="text/javascript" src="../../Assets/Scripts/nprogress.js" checklogon="true"></script>
+
+    <script type="text/javascript" src="../../Assets/Scripts/gsp.lib.js" checklogon="true"></script>
+    <script type="text/javascript" src="../../Assets/Scripts/gsp.lib.user.js" checklogon="true"></script>
+
+
+
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="row">
+
+
+            <form action="" method="POST" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <legend>UI Sample</legend>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2" for="">UI 提示</label>
+                    <input onclick="gsp.ui.notice.success('message here','title')" type="button" class="btn btn-default" value="显示成功消息">
+                    <input onclick="gsp.ui.notice.info('message here','title')" type="button" class="btn btn-default" value="显示提示信息">
+                    <input onclick="gsp.ui.notice.error('message here','title')" type="button" class="btn btn-default" value="显示错误消息">
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-2" for="">UI 加载进度</label>
+                    <input onclick="gsp.ui.loading.show()" type="button" class="btn btn-default" value="加载进度">
+                    <input onclick="loading()" type="button" class="btn btn-default" value="多函数加载">
+                    <input onclick="gsp.ui.notice.hide()" type="button" class="btn btn-default" value="完成加载">
+                </div>
+
+             
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        gsp.ui.loading.show();
+
+        gsp.utils.pageAfterFunction.push(function () {
+
+            setTimeout(function () {
+                gsp.ui.loading.add(0.2);
+            }, 200);
+
+            setTimeout(function () {
+                gsp.ui.loading.add(0.2);
+            }, 400);
+            setTimeout(function () {
+                gsp.ui.loading.add(0.2);
+            }, 400);
+
+            setTimeout(function () {
+                gsp.ui.loading.hide();
+            }, 1000);
+
+        })
+
+
+        function loading() {
+            gsp.ui.loading.show();
+
+            setTimeout(function () { 
+                gsp.ui.notice.info('当前loading值：' + add2with(0.05)); 
+            }, 500);
+
+            setTimeout(function () { 
+                gsp.ui.notice.info('当前loading值：' + add2with(0.05));
+            }, 500);
+
+            setTimeout(function () { 
+                gsp.ui.notice.info('当前loading值：' + add2with(0.05));
+            }, 500);
+
+            setTimeout(function () {
+                gsp.ui.notice.info('当前loading值：' + add2with(0.05));
+            }, 500);
+        }
+
+        var add2with = add(0.2);
+
+        function add(x) {
+            return function (y) {
+                return gsp.ui.loading.add(x+y); 
+            }
+        }
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-﻿{{#extend "layout"}}
+{{#extend "layout"}}
 
 {{#content "maincontent"}}
                     <div id="schedule-work" class="row">
@@ -28,7 +28,7 @@
                                         <ul class="nav nav-tabs">
                                             <li class="active"><a data-toggle="tab" href="#customer-group-serach" data-flag="1">集团客户数据查询</a></li>
                                             <li><a data-toggle="tab" href="#customer-group-area" data-flag="2" data-bind="click:areaClick">分区域</a></li>
-                                            <li><a data-toggle="tab" href="#customer-group-team" data-flag="3">分团队</a></li>
+                                            <li><a data-toggle="tab" href="#customer-group-team" data-flag="3"  data-bind="click:teamClick">分团队</a></li>
                                         </ul>
 
                                     </div>
@@ -56,41 +56,12 @@
                                         </div>
 
                                         <div id="customer-group-area" class="tab-pane fade">
-
-                                            <!--<div id="area-data1" class="col-xs-6">
-                                                <div class="panel">
-                                                    <div class="panel-body">
-                                                        <div class="table-responsive">
-                                                            <table class="table table-striped">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th></th>
-                                                                        <th class="major">全球战略</th>
-                                                                        <th class="major">总行重点</th>
-                                                                        <th class="no-major">分行重点</th>
-                                                                        <th class="no-major">一般客户</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody data-bind="foreach:{data:customer,as:'cus'}">
-                                                                    <tr>
-                                                                        <td data-bind="text:cus.title">江苏省分行</td>
-                                                                        <td class="col-md-2 major" data-bind="text:cus.world">3</td>
-                                                                        <td class="col-md-2 major" data-bind="text:cus.headoffice">3</td>
-                                                                        <td class="col-md-2 no-major" data-bind="text:cus.branch">3</td>
-                                                                        <td class="col-md-2 no-major" data-bind="text:cus.commonly">3</td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>-->
                                             <div id="area-data1" class="col-xs-6" data-bind="component:{name:'area-data1',params:area1}"></div>
                                             <div id="area-data2" class="col-xs-6" data-bind="component:{name:'area-data2',params:area2}"></div>
                                         </div>
                                         <div id="customer-group-team" class="tab-pane fade">
-                                            <!--<div id="team-data1" class="col-xs-6" data-bind="component:{name:'team-data1'}"></div>
-                                            <div id="team-data2" class="col-xs-6" data-bind="component:{name:'team-data2'}"></div>-->
+                                            <div id="team-data1" class="col-xs-6" data-bind="component:{name:'team-data1',params:team1}"></div>
+                                            <div id="team-data2" class="col-xs-6" data-bind="component:{name:'team-data2',params:team2}"></div>
                                         </div>
                                     </div>
                                 </div>

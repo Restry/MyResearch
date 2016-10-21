@@ -1,4 +1,4 @@
-﻿/// <reference path="D:\Work\TFS02\BOCGSP2Project\BOC.GSP2\BOC.GSP2.WebApp\Assets/Scripts/knockout-3.4.0.js" />
+/// <reference path="D:\Work\TFS02\BOCGSP2Project\BOC.GSP2\BOC.GSP2.WebApp\Assets/Scripts/knockout-3.4.0.js" />
 'use strict';
 var baseUrl = '/';
 

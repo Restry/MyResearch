@@ -1,0 +1,67 @@
+<div class="form-horizontal" id="rdo">
+    <div class="form-group">
+        <label class="col-lg-1 control-label">币别</label>
+        <div class="col-lg-11">
+            <div class="radio">
+               
+
+                <input id="deposit-overview-domestic-radio1" data-bind="checked: currency" value="RMB"  class="magic-radio" type="radio" name="radio01" >
+                <label for="deposit-overview-domestic-radio1">人民币</label>
+
+                <input id="deposit-overview-domestic-radio2" data-bind="checked: currency" value="US" class="magic-radio" type="radio" name="radio01">
+                <label for="deposit-overview-domestic-radio2">外币折美元</label>
+
+                <input id="deposit-overview-domestic-radio3" data-bind="checked: currency" value="Other" class="magic-radio" type="radio" name="radio01">
+                <label for="deposit-overview-domestic-radio3">各币种折人民币</label>
+                 
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-1 control-label">图表类型</label>
+        <div class="col-lg-11">
+            <div class="checkbox">
+                <input id="deposit-overview-domestic-chk1" data-bind="checked: selectall" value="All" class="magic-checkbox" type="checkbox" name="deposit-overview-domestic-chk">
+                <label for="deposit-overview-domestic-chk1" class="form-checkbox-button-center">全选</label>
+                <input id="deposit-overview-domestic-chk2"  data-bind="checked: charttype" value="SD"  class="magic-checkbox magic-checkbox1" type="checkbox" name="deposit-overview-domestic-chk">
+                <label for="deposit-overview-domestic-chk2" class="form-checkbox-button-center">时点</label>
+                <input id="deposit-overview-domestic-chk3" data-bind="checked: charttype" value="RJ" class="magic-checkbox magic-checkbox1" type="checkbox" name="deposit-overview-domestic-chk" >
+                <label for="deposit-overview-domestic-chk3" class="form-checkbox-button-center">日均</label>
+                <input id="deposit-overview-domestic-chk4" data-bind="checked: charttype" value="TY" class="magic-checkbox magic-checkbox1" type="checkbox" name="deposit-overview-domestic-chk" >
+                <label for="deposit-overview-domestic-chk4" class="form-checkbox-button-center">同业</label>
+                <input id="deposit-overview-domestic-chk5" data-bind="checked: charttype" value="FXL" class="magic-checkbox magic-checkbox1" type="checkbox" name="deposit-overview-domestic-chk">
+                <label for="deposit-overview-domestic-chk5" class="form-checkbox-button-center">付息率</label>
+                <input id="deposit-overview-domestic-chk6" data-bind="checked: charttype" value="FHY" class="magic-checkbox magic-checkbox1" type="checkbox" name="deposit-overview-domestic-chk" >
+                <label for="deposit-overview-domestic-chk6" class="form-checkbox-button-center">分行业</label>
+                <input id="deposit-overview-domestic-chk7" data-bind="checked: charttype" value="FCP" class="magic-checkbox magic-checkbox1" type="checkbox" name="deposit-overview-domestic-chk" >
+                <label for="deposit-overview-domestic-chk7" class="form-checkbox-button-center">分产品</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-1 control-label">机构</label>
+        <div class="col-lg-5 chartselect">
+            <select class="form-control-select" data-bind="options: orglist,optionsText: 'txt',value: selectedorg"></select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-lg-1 control-label">数据日期</label>
+        <div class="col-lg-11 chartselect">
+            <select id="overview-domestic-selectyear" data-bind="options:yearlist,optionsText:'text', value:selectedyear,event:{change:changemonth}" class="form-control-select" style="width:100px" ></select>
+            <select id="overview-domestic-selectmonth" data-bind="options:monthlist,optionsText:'text',value:selectedmonth" class="form-control-select" style="width:80px"></select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-11">
+            <button class="btn btn-danger btn-normal" data-bind="click:searchaction">查看</button>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="dottedline"></div>
+    </div>
+</div>

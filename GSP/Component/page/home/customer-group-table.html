@@ -1,0 +1,26 @@
+<div class="panel">
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="major">全球战略</th>
+                        <th class="major">总行重点</th>
+                        <th class="no-major">分行重点</th>
+                        <th class="no-major">一般客户</th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach:{data:customer,as:'cus'}">
+                    <tr>
+                        <td data-bind="text:cus.title">江苏省分行</td>
+                        <td class="col-md-2 major" data-bind="text:cus.world">3</td>
+                        <td class="col-md-2 major" data-bind="text:cus.headoffice">3</td>
+                        <td class="col-md-2 no-major" data-bind="text:cus.branch">3</td>
+                        <td class="col-md-2 no-major" data-bind="text:cus.commonly">3</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
