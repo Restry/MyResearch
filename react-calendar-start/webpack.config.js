@@ -8,6 +8,8 @@ var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(ROOT_PATH, 'app');
 var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 
+var theme={'primary-color':'red'}
+
 module.exports = {
     entry: {
         //      index: path.resolve(APP_PATH, 'index.jsx'),
@@ -57,10 +59,33 @@ module.exports = {
         }, {
             test: /\.scss$/,
             loader: ExtractTextPlugin.extract("style-loader", "css-loader", 'sass-loader')
-        }, {
+        }, 
+ 
+        {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-        }, {
+        }, 
+
+          {
+          test(filePath) {
+            return /\.less$/.test(filePath) && !/\.module\.less$/.test(filePath);
+          },
+          loader: ExtractTextPlugin.extract(
+            'css?sourceMap!' +
+            'postcss!' +
+            `less-loader?{"sourceMap":true,"modifyVars":${JSON.stringify(theme)}}`
+          ),
+        },
+        {
+          test: /\.module\.less$/,
+          loader: ExtractTextPlugin.extract(
+            'css?sourceMap&modules&localIdentName=[local]___[hash:base64:5]!!' +
+            'postcss!' +
+            `less-loader?{"sourceMap":true,"modifyVars":${JSON.stringify(theme)}}`
+          ),
+        },
+
+         ,{
             test: /\.html$/,
             loader: "html?-minimize"
         }, {

@@ -9,9 +9,9 @@ import Calendar from './components/calendar'
 import Gituser from './components/Gituser' 
 import Home from './modules/Home' 
 
-import 'bootstrap/dist/css/bootstrap.css';
-import './main.scss'; 
-
+//import 'bootstrap/dist/css/bootstrap.css';
+import 'antd/dist/antd.css'; 
+  
 render(( 
   <Router history={hashHistory}> 
     <Route path="/" component={App}>
