@@ -37,6 +37,9 @@ define(["knockout", "crossroads", "hasher","nprogress"], function (ko, crossroad
         function parseHash(newHash, oldHash) { 
             crossroads.parse(newHash); 
                 nprogress.done();
+                
+  $('.selectpicker').selectpicker();
+ 
         }
         crossroads.normalizeFn = crossroads.NORM_AS_OBJECT;
         hasher.initialized.add(parseHash);

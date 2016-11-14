@@ -9,11 +9,13 @@ var require = {
         "text": "modules/text",
         "toastr": "Assets/scripts/toastr.min",
         "nprogress": "Assets/scripts/nprogress",
-
+        "bootstrap": "modules/bootstrap",
+        "bootstrap-select": "modules/bootstrap-select.min",
         "crossroads": "modules/crossroads"
     },
     shim: {
-        //  "bootstrap":            { deps: ["jquery"] },
+          "bootstrap":            { deps: ["jquery"] },
+          "bootstrap-select":            { deps: ["jquery"] },
         //  "globalize":            { deps: ["jquery"], exports: 'window.Globalize' }
     }
 };

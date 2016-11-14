@@ -1,4 +1,4 @@
-define(['jquery', 'knockout', './router.js'], function ($, ko, router) {
+define(['jquery', 'knockout', './router.js',"bootstrap","bootstrap-select"], function ($, ko, router) {
 
   // Components can be packaged as AMD modules, such as the following:
   ko.components.register('nav-bar', { require: 'components/nav-bar/nav-bar' });
@@ -7,9 +7,10 @@ define(['jquery', 'knockout', './router.js'], function ($, ko, router) {
   ko.components.register('manager-page', { require: 'pages/manager/main' });
 
   // ... or for template-only components, you can just point to a .html file directly:
-  ko.components.register('about-page', {
-    template: { require: 'text!pages/about/about.html' }
-  });
+//   ko.components.register('about-page', {
+//     template: { require: 'text!pages/about/about.html' }
+//   });
+  ko.components.register('about-page', { require: 'pages/about/about' });
  
   ko.components.register('investment-page', { require: 'components/investment-page/investment-page' }); 
 
@@ -53,4 +54,5 @@ ko.components.register('information-link', { require: 'Component/page/home/infor
 
   // Start the application
   ko.applyBindings({ route: router.currentRoute });
+
 });
