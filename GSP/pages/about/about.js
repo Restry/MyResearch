@@ -5,7 +5,7 @@ define(["knockout", "text!./about.html", "toastr", "nprogress"], function (ko, a
     }
 
     function aboutViewModel(route) {
-        debugger;
+        //debugger;
         console.log('list-group length:' + $('.list-group').length)
 
 
@@ -18,6 +18,9 @@ define(["knockout", "text!./about.html", "toastr", "nprogress"], function (ko, a
         }, 1000)
 
         var model = {
+            logLoadedCallback:function (md) {  
+            md.user('im you daye ')
+            },
             title:"AAAAAAAAAAAAAAAA",
             selects: [{ title: 0 }, { title: 1 }, { title: 2 }, { title: 3 }, { title: 4 }, { title: 5 }],
             mmsel: [{ title: 0 }, { title: 1 }, { title: 2 }, { title: 3 }, { title: 4 }, { title: 5 }]

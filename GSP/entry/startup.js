@@ -5,6 +5,8 @@ define(['jquery', 'knockout', './router.js',"bootstrap","bootstrap-select"], fun
   ko.components.register('home-page', { require: 'pages/home/home' });
   ko.components.register('role-page', { require: 'pages/role/main' });
   ko.components.register('manager-page', { require: 'pages/manager/main' });
+  ko.components.register('login', { require: 'components/login/login' });
+  ko.components.register('userinfo', { require: 'components/userinfo/userinfo' }); 
 
   // ... or for template-only components, you can just point to a .html file directly:
 //   ko.components.register('about-page', {
